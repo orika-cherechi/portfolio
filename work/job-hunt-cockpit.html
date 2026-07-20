@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Job Hunt Cockpit — Case Study · Cherechi Orika</title>
+<meta name="description" content="A local-first AI application assistant that discovers, scores, tailors, and tracks Product Manager job applications. Built by Cherechi Orika.">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <a class="brand" href="../index.html">Cherechi <b>Orika</b></a>
+    <div class="nav-links">
+      <a class="hide-sm" href="../index.html#approach">Approach</a>
+      <div class="menu">
+        <button aria-haspopup="true">Case Studies ▾</button>
+        <div class="menu-panel">
+          <a href="ai-operating-system.html">AI Operating System<small>Product Lead</small></a>
+          <a href="job-hunt-cockpit.html">AI Job Hunt Cockpit<small>Product Owner</small></a>
+          <a href="the-pattern-house.html">The Pattern House<small>Product Lead &amp; Builder</small></a>
+          <a href="che-orika.html">Ché Orika<small>Founder &amp; Product Lead</small></a>
+        </div>
+      </div>
+      <a class="hide-sm" href="../index.html#contact">Contact</a>
+      <button class="toggle" id="themeToggle" aria-label="Toggle theme" title="Toggle theme">◐</button>
+    </div>
+  </div>
+</nav>
+
+<main class="wrap">
+  <section class="cs-hero" style="border:none">
+    <a class="back" href="../index.html#work">← All work</a>
+    <div class="cs-role">Product Owner</div>
+    <h1>AI Job Hunt Cockpit</h1>
+    <div class="cs-meta">
+      <span class="badge internal">Local-first App</span>
+      <a class="case-link" href="https://github.com/orika-cherechi/job-hunt-cockpit" target="_blank" rel="noopener">github ↗</a>
+      <span style="font-family:var(--mono);font-size:11px;color:var(--ink-faint)">Personal AI tooling</span>
+    </div>
+    <p class="cs-lead">A local-first application assistant I built and own as Product Owner. It discovers remote Product Manager roles, scores them against a locked fit profile, tailors my resume and writes a cover letter per role, renders polished PDF applications, and tracks every opportunity through a dashboard. It runs entirely on my machine and drives generation through my local Claude Code subscription, so my resume, the job data, and every draft stay on disk under my control.</p>
+  </section>
+
+  <figure class="shot cs-lead-img">
+    <img src="../assets/img/jh-dashboard.jpg" alt="Job hunt dashboard with role cards and fit tags">
+    <figcaption>The Today view, discovered roles scored for fit, each with one-click resume and cover-letter generation</figcaption>
+  </figure>
+
+  <div class="cs-body">
+
+    <div class="cs-section">
+      <div class="cs-2col">
+        <div><div class="cs-h">The Problem</div></div>
+        <div class="cs-prose">
+          <p>Applying to PM roles well is repetitive and slow. Each strong application means finding fresh, genuinely-matched remote postings, reading the live job description, rewriting the resume to mirror its language, drafting a tailored cover letter, exporting clean PDFs, and logging it all so nothing slips.</p>
+          <p>Done by hand that is hours every week, and the tedium quietly pushes you toward generic, lower-quality applications.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-h">How it works</div>
+      <p class="cs-prose" style="margin-bottom:18px">The pipeline is discover, score, tailor, generate, export, track.</p>
+      <div class="cs-prose">
+        <ul class="cs-list">
+          <li><b>Discover.</b> A "Run now" action spawns a detached research run that scrapes PM listings across boards (LinkedIn, Wellfound, RemoteOK, We Work Remotely, Remotive, Himalayas, Lever- and Greenhouse-hosted boards, and direct career pages) and writes a dated digest of net-new roles. The run is hardened with a single-run lock, retries with backoff, and a status marker, so a failed run is visible instead of silently vanishing.</li>
+          <li><b>Score fit.</b> A locked hunt profile gates every role on title scope, years-of-experience band, remote-only, geographic eligibility, and timezone, and it flags rather than silently drops on compensation, tagging roles below-floor, comp-unknown, or overlap-ok so I decide.</li>
+          <li><b>Tailor.</b> When I pick a role, the app re-fetches the live job description at click time, verifies the posting is not dead, and falls back to a headless-Chromium render for JavaScript-heavy boards. It then tailors strictly against that fresh JD, never a stale snippet.</li>
+          <li><b>Generate.</b> The tailoring call composes my profile, master resume, and a tailor brief into one prompt and returns a structured resume and cover letter. When the JD implies experience my resume only hints at, it asks me a short list of adjacency questions before finalizing, rather than inventing to fill the gap.</li>
+          <li><b>Export.</b> Generated markdown renders to print-ready A4 PDFs through templates matching my established resume design.</li>
+          <li><b>Track.</b> Every role carries status, favorite, applied state, outcome, notes, and versioned document history in a dashboard with Today, All Roles, and Archive views.</li>
+        </ul>
+      </div>
+      <p class="expand-note" style="margin-top:18px">↳ <b>Click any image to view it full size.</b></p>
+      <div class="shot-row three">
+        <figure class="shot"><img src="../assets/img/jh-all.jpg" alt="All roles table" loading="lazy"><figcaption>All roles, a tracked pipeline with status, comp, and outcomes</figcaption></figure>
+        <figure class="shot"><img src="../assets/img/jh-role.jpg" alt="Role detail page" loading="lazy"><figcaption>Role detail, live JD plus generated application artifacts</figcaption></figure>
+        <figure class="shot"><img src="../assets/img/jh-archive.jpg" alt="Archive view" loading="lazy"><figcaption>Archive, everything applied-to or set aside, restorable</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-2col">
+        <div><div class="cs-h">What I Built</div></div>
+        <div class="cs-prose">
+          <ul class="cs-list">
+            <li>A daily research runner that produces a deduped digest of fresh, profile-matched roles.</li>
+            <li>A live JD verification layer with deadness detection and a headless-render fallback, so I never tailor against a gone posting.</li>
+            <li>A tailoring engine with a strict output contract and a built-in "ask before fabricating" step.</li>
+            <li>Automatic document versioning (each regenerate archives the prior resume and cover letter) plus saved JD audit copies.</li>
+            <li>A PDF renderer that matches my resume brand.</li>
+            <li>A tracking dashboard over an on-disk status store, with role detail pages and archive handling.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-2col">
+        <div><div class="cs-h">Tech &amp; Architecture</div></div>
+        <div class="cs-prose">
+          <p>Local-first by design: Next.js App Router with React and TypeScript, Zod for input validation, and the local filesystem as the datastore. Generation shells out to my local Claude Code CLI, so no API key or cloud upload is involved.</p>
+          <p>Playwright with Chromium, kept out of the app bundle and invoked through small Node scripts, powers both the JS-rendered JD fetch and the HTML-to-PDF rendering. The research run is a detached background process with its own lock, retry, and status file.</p>
+          <div class="chips" style="margin-top:14px"><span class="c">Next.js</span><span class="c">React</span><span class="c">TypeScript</span><span class="c">Node.js</span><span class="c">Zod</span><span class="c">Playwright</span><span class="c">Claude Code CLI</span><span class="c">GitHub</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-callout">
+        <div class="cs-h">Outcome</div>
+        <p>The Cockpit automates the grind, discovery, fit-filtering, tailoring, and paperwork, while keeping me in the loop exactly where judgment matters: which roles to pursue and how to answer the questions that keep an application truthful. It turns hours of repetitive work into a few reviewed clicks, and frees that time for interview preparation.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="cs-nav">
+    <a href="ai-operating-system.html"><small>Previous</small>← AI Operating System</a>
+    <a class="nx" href="the-pattern-house.html"><small>Next</small>The Pattern House →</a>
+  </div>
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <p class="foot-name">Let's build something.</p>
+    <p class="foot-sub">Open to Senior Product Manager roles and interesting problems.</p>
+    <div class="foot-links">
+      <a href="mailto:orikacherechi@gmail.com">orikacherechi@gmail.com</a>
+      <a href="https://linkedin.com/in/cherechi-orika" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a href="https://github.com/orika-cherechi" target="_blank" rel="noopener">GitHub ↗</a>
+    </div>
+    <div class="foot-fine">© 2026 Cherechi Orika · Product Portfolio</div>
+  </div>
+</footer>
+
+<div id="lightbox"><button class="lb-close" aria-label="Close">✕</button><img alt=""><div class="lb-cap"></div></div>
+<script src="../assets/site.js"></script>
+</body>
+</html>

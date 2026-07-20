@@ -1,0 +1,5 @@
+assets/shots/
+.DS_Store
+node_modules/
+*.log
+*.tsbuildinfo

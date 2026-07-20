@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ché Orika — Case Study · Cherechi Orika</title>
+<meta name="description" content="A multi-tenant fashion commerce platform with a governed operational backend, built by Cherechi Orika as Founder and Product Lead.">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <a class="brand" href="../index.html">Cherechi <b>Orika</b></a>
+    <div class="nav-links">
+      <a class="hide-sm" href="../index.html#approach">Approach</a>
+      <div class="menu">
+        <button aria-haspopup="true">Case Studies ▾</button>
+        <div class="menu-panel">
+          <a href="ai-operating-system.html">AI Operating System<small>Product Lead</small></a>
+          <a href="job-hunt-cockpit.html">AI Job Hunt Cockpit<small>Product Owner</small></a>
+          <a href="the-pattern-house.html">The Pattern House<small>Product Lead &amp; Builder</small></a>
+          <a href="che-orika.html">Ché Orika<small>Founder &amp; Product Lead</small></a>
+        </div>
+      </div>
+      <a class="hide-sm" href="../index.html#contact">Contact</a>
+      <button class="toggle" id="themeToggle" aria-label="Toggle theme" title="Toggle theme">◐</button>
+    </div>
+  </div>
+</nav>
+
+<main class="wrap">
+  <section class="cs-hero" style="border:none">
+    <a class="back" href="../index.html#work">← All work</a>
+    <div class="cs-role">Founder &amp; Product Lead</div>
+    <h1>Ché Orika</h1>
+    <div class="cs-meta">
+      <span class="badge beta">Private Beta</span>
+      <a class="case-link" href="https://cheorika.com" target="_blank" rel="noopener">cheorika.com ↗</a>
+      <span class="wc-stack" style="font-family:var(--mono);font-size:11px;color:var(--ink-faint)">Multi-tenant commerce platform</span>
+    </div>
+    <p class="cs-lead">A full-stack, multi-tenant commerce platform I built to run a fashion business end to end, not just to sell online. It pairs a premium storefront with an operational admin portal that is the single source of truth for identity, catalog, inventory, orders, payments, media, and audit. I designed the architecture, wrote the PRDs, made the technical calls, and shipped it with an AI-assisted engineering workflow.</p>
+  </section>
+
+  <figure class="shot cs-lead-img">
+    <img src="../assets/img/co-hero.jpg" alt="Ché Orika storefront editorial hero">
+    <figcaption>The customer storefront, live at cheorika.com</figcaption>
+  </figure>
+
+  <div class="cs-body">
+
+    <div class="cs-section">
+      <div class="cs-2col">
+        <div><div class="cs-h">The Problem</div></div>
+        <div class="cs-prose">
+          <p>Most small fashion brands stitch together a storefront, a spreadsheet, a POS app, and a separate CRM, and end up with data that never reconciles and no single place that is actually true.</p>
+          <p>I wanted one system where the storefront, the boutique floor, inventory, and finance all read and write through the same governed backend. Stitching SaaS together could not give me brand-level ownership of data, role-scoped access to money, or a foundation that survives the jump from one boutique to many. So I decided to build my own, with AI as my engineering partner.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-2col">
+        <div><div class="cs-h">Architecture &amp; Approach</div></div>
+        <div class="cs-prose">
+          <ul class="cs-list">
+            <li><b>Multi-tenant from birth.</b> A strict hierarchy: a Tenant owns Brands, a Brand owns Stores, and Stores own inventory, orders, and fulfilment. It launched for one brand, but I designed for tenant isolation up front so it can host many brands and stores without a structural redesign.</li>
+            <li><b>The admin portal is the source of truth.</b> The storefront, a future POS, and any integration are clients that consume platform data. No downstream surface owns business state. This is the decision that makes it an operating system rather than a website.</li>
+            <li><b>Host-split identities.</b> Staff authenticate as an admin user on the admin host; customers are a completely separate identity on the storefront. The two never share a session, table, or cookie. Authentication runs on Better Auth; authorization is my own role and permission model, kept separate so identity and policy can evolve independently.</li>
+            <li><b>Membership-based access.</b> A user belongs to a tenant and gains a brand through a membership that carries a role. Every request validates the authenticated user, the brand, an active membership, and the required permission, enforced server-side, never trusting the URL or the frontend.</li>
+            <li><b>Decoupled catalog schema.</b> For the catalog I introduced a fresh, brand-scoped schema physically separate from the legacy storefront tables, so building it could not touch live revenue.</li>
+          </ul>
+          <p style="margin-top:16px">The stack: Next.js App Router on Vercel, Neon Postgres with Prisma, Better Auth, Cloudinary for media, Paystack for payments, and Resend for transactional email. Money is modelled as Decimal, keys are UUIDs, and business records soft-delete rather than hard-delete so financial and audit history stays intact.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-h">Inside the admin portal</div>
+      <p class="expand-note">↳ <b>Click any image to view it full size.</b></p>
+      <div class="cs-gallery">
+        <figure class="shot"><img src="../assets/img/co-admin-dashboard.jpg" alt="Admin KPI dashboard" loading="lazy"><figcaption>Operations dashboard — revenue, orders, stock, and activity at a glance</figcaption></figure>
+        <figure class="shot"><img src="../assets/img/co-admin-products.jpg" alt="Product catalog admin" loading="lazy"><figcaption>Product catalog — variants, pricing, SKUs, visibility, and status</figcaption></figure>
+        <figure class="shot"><img src="../assets/img/co-admin-categories.jpg" alt="Category hierarchy" loading="lazy"><figcaption>Hierarchical categories, one product can live in many</figcaption></figure>
+        <figure class="shot"><img src="../assets/img/co-admin-collections.jpg" alt="Collections management" loading="lazy"><figcaption>Curated collections with visibility toggles</figcaption></figure>
+        <figure class="shot"><img src="../assets/img/co-admin-activity.jpg" alt="Immutable audit activity log" loading="lazy"><figcaption>Immutable audit log — every action recorded</figcaption></figure>
+        <figure class="shot"><img src="../assets/img/co-admin-login.jpg" alt="Admin portal login" loading="lazy"><figcaption>The staff portal, host-split from the customer storefront</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-2col">
+        <div><div class="cs-h">Key Features Shipped</div></div>
+        <div class="cs-prose">
+          <ul class="cs-list">
+            <li><b>Customer storefront (live).</b> Browsing, bag, and checkout with server-side cart and totals recomputation, so a crafted payload cannot set its own price. Paystack payments, order tracking, atomic stock locking to prevent oversell, and editorial surfaces (lookbook, journal, edits).</li>
+            <li><b>Identity &amp; auth (live).</b> A single Better Auth login, one account per employee, brand switching for multi-brand users.</li>
+            <li><b>RBAC &amp; user management (live).</b> Four roles, Owner, Admin, Staff, and Trainee, driven by a versioned permission catalog. People management, tokenized single-use invitations, multi-owner support, immutable audit logging, and an activity feed.</li>
+            <li><b>Dashboards (live).</b> A full KPI dashboard for Owners and Admins, and a separate money-free operations dashboard for Staff and Trainees.</li>
+            <li><b>Product catalog.</b> Products as concepts with dynamically generated variants, per-variant pricing with VAT, per-brand auto SKUs plus printable barcodes, hierarchical categories, many-to-many collections, signed media uploads, draft autosave, and soft-delete with restore.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-2col">
+        <div><div class="cs-h">The Hardest Problem</div></div>
+        <div class="cs-prose">
+          <p>The catalog and inventory model was the deep work. Fashion breaks naive product tables: a "product" is a concept, and the thing you actually sell, price, count, and scan is the <strong>variant</strong>, so inventory lives at variant-by-store, never on the product.</p>
+          <p>Getting that right meant per-brand-unique SKUs, scannable barcodes, variant generation that stays efficient and bounded, and money modelled as Decimal to kill a rounding bug at the schema level. The sharpest nuance was the cost and margin firewall: pricing edits are Owner and Admin only, and Staff must never see cost or margin at all. I gated that on the read boundary, not just by hiding UI, so cost and margin are stripped from payloads and the server returns a 403, fail-closed. "Already exposed on another screen" is not an acceptable reason to leak it.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-2col">
+        <div><div class="cs-h">Product Decisions</div></div>
+        <div class="cs-prose">
+          <ul class="cs-list">
+            <li><b>Build an operating system, not a storefront.</b> The admin portal is the source of truth, designed around operational efficiency, so the storefront is one channel over a governed core rather than the system of record.</li>
+            <li><b>Decouple the catalog to protect live revenue.</b> Rather than evolve the legacy storefront tables under live load, I stood up a parallel brand-scoped schema so a large build could never break checkout, and accepted a deliberate future cutover as the cost.</li>
+            <li><b>Gate money and PII fail-closed by role.</b> Cost, margin, revenue, and exports are enforced at the read boundary with server-side 403s and payload stripping, defaulting to closed unless the role is privileged.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-2col">
+        <div><div class="cs-h">Technology</div></div>
+        <div class="cs-prose">
+          <div class="chips">
+            <span class="c">Next.js</span><span class="c">TypeScript</span><span class="c">Neon PostgreSQL</span><span class="c">Prisma</span><span class="c">Better Auth</span><span class="c">Cloudinary</span><span class="c">Paystack</span><span class="c">Resend</span><span class="c">Vercel</span><span class="c">Claude Code</span><span class="c">Cursor</span><span class="c">ChatGPT</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-callout">
+        <div class="cs-h">What I Learned</div>
+        <p>Running an AI engineering team taught me that the product manager's leverage is in the guardrails: crisp specs, decision records that capture why, and release gates. My hardest lesson was that "all green" can still be wrong. A sprint passed per-screen review and endpoint checks, yet a wizard was never wired to its backends. Now I verify render-deep and data-deep, walking the whole journey, not just confirming screens render and endpoints return 200.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="cs-nav">
+    <a href="the-pattern-house.html"><small>Previous</small>← The Pattern House</a>
+    <a class="nx" href="ai-operating-system.html"><small>Next</small>AI Operating System →</a>
+  </div>
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <p class="foot-name">Let's build something.</p>
+    <p class="foot-sub">Open to Senior Product Manager roles and interesting problems.</p>
+    <div class="foot-links">
+      <a href="mailto:orikacherechi@gmail.com">orikacherechi@gmail.com</a>
+      <a href="https://linkedin.com/in/cherechi-orika" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a href="https://github.com/orika-cherechi" target="_blank" rel="noopener">GitHub ↗</a>
+    </div>
+    <div class="foot-fine">© 2026 Cherechi Orika · Product Portfolio</div>
+  </div>
+</footer>
+
+<div id="lightbox"><button class="lb-close" aria-label="Close">✕</button><img alt=""><div class="lb-cap"></div></div>
+<script src="../assets/site.js"></script>
+</body>
+</html>

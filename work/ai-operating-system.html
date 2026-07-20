@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Operating System — Case Study · Cherechi Orika</title>
+<meta name="description" content="A multi-agent AI operating system where specialized agents cover every business function, connected by governed hand-offs. Built by Cherechi Orika.">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <a class="brand" href="../index.html">Cherechi <b>Orika</b></a>
+    <div class="nav-links">
+      <a class="hide-sm" href="../index.html#approach">Approach</a>
+      <div class="menu">
+        <button aria-haspopup="true">Case Studies ▾</button>
+        <div class="menu-panel">
+          <a href="ai-operating-system.html">AI Operating System<small>Product Lead</small></a>
+          <a href="job-hunt-cockpit.html">AI Job Hunt Cockpit<small>Product Owner</small></a>
+          <a href="the-pattern-house.html">The Pattern House<small>Product Lead &amp; Builder</small></a>
+          <a href="che-orika.html">Ché Orika<small>Founder &amp; Product Lead</small></a>
+        </div>
+      </div>
+      <a class="hide-sm" href="../index.html#contact">Contact</a>
+      <button class="toggle" id="themeToggle" aria-label="Toggle theme" title="Toggle theme">◐</button>
+    </div>
+  </div>
+</nav>
+
+<main class="wrap">
+  <section class="cs-hero" style="border:none">
+    <a class="back" href="../index.html#work">← All work</a>
+    <div class="cs-role">Product Lead</div>
+    <h1>AI Operating System</h1>
+    <div class="cs-meta">
+      <span class="badge internal">Internal System</span>
+      <span style="font-family:var(--mono);font-size:11px;color:var(--ink-faint)">Multi-agent operating model</span>
+    </div>
+    <p class="cs-lead">Most people treat AI as an assistant, a tool you reach for one task at a time. I run it as the operating system underneath my businesses. I designed a multi-agent system where a specialized AI agent owns each business function end to end, with defined responsibilities, context boundaries, hand-off rules, documentation standards, and hard execution guardrails. Publicly it covers seven functions: Product, Engineering, Design, Operations, Growth, Customer Success, and Quality Assurance.</p>
+  </section>
+
+  <figure class="shot cs-lead-img">
+    <img src="../assets/img/aos-board.jpg" alt="Sprint board showing epics, owners, and progress">
+    <figcaption>The control surface, a live sprint board where every function's work is tracked to a single source of truth</figcaption>
+  </figure>
+
+  <div class="cs-body">
+
+    <div class="cs-section">
+      <div class="cs-2col">
+        <div><div class="cs-h">The Problem</div></div>
+        <div class="cs-prose">
+          <p>Running multiple ventures the normal way means standing up multiple teams, product, engineering, design, QA, ops, growth, and support, for every arm. That is expensive, slow to coordinate, and impossible for a solo founder-operator to staff.</p>
+          <p>I needed the coverage of a cross-functional org without the headcount, and I needed the work to stay honest and traceable rather than devolving into a pile of one-off AI outputs nobody could audit.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-h">How it works — the interaction model</div>
+      <p class="cs-prose" style="margin-bottom:18px">The value is not in any single agent. It is in how work flows between functions, and in the governance that keeps that flow trustworthy.</p>
+      <figure class="shot cs-lead-img" style="margin:0 0 18px">
+        <img src="../assets/img/aos-flow.jpg" alt="Diagram of how work moves through the operating system with governance gates">
+        <figcaption>How work moves, an idea becomes live software through eight stages and four governance gates</figcaption>
+      </figure>
+      <div class="cs-prose">
+        <ul class="cs-list">
+          <li><b>Work starts as a written requirement.</b> Product turns a business goal into a spec, breaks it into stories with acceptance criteria, and places it on a single prioritized backlog. Nothing gets built without an issue to trace it to.</li>
+          <li><b>Design takes the problem, not a solution.</b> It produces the flows and signs off the experience before any engineering begins.</li>
+          <li><b>Engineering picks up the issue on an isolated branch,</b> builds against the spec, self-reviews, and opens a merge request. Every branch maps one-to-one to a tracked issue.</li>
+          <li><b>Integration passes through a single merge gate.</b> One reviewer performs adversarial review, reading the diff line by line for security holes, secret leaks, edge cases, and scope creep, and is the only role permitted to merge. Review is tiered: routine work gets a lighter pass; auth, payments, and migrations always get full scrutiny.</li>
+          <li><b>The merge auto-deploys to staging,</b> where Quality Assurance runs scenario matrices and edge-case sweeps. QA holds a real sign-off gate and can block a release on any Critical or High defect.</li>
+          <li><b>Production is a human-approved gate.</b> Nothing reaches the live branch without my explicit written approval, after which Operations promotes it through a reversible, environment-consistent deploy.</li>
+          <li><b>One discipline holds it together:</b> a single-writer source of truth. Only Product writes the board and tracker; every other function reports status and routes updates through it. It exists because concurrent writers once made the board report something false.</li>
+        </ul>
+      </div>
+      <figure class="shot cs-lead-img" style="margin:18px 0 0">
+        <img src="../assets/img/aos-govern.jpg" alt="Governance rules that keep the system honest" loading="lazy">
+        <figcaption>The rules that keep it honest, a single owner on every protected surface</figcaption>
+      </figure>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-h">The full team, every function mapped</div>
+      <p class="cs-prose" style="margin-bottom:14px;max-width:70ch">Each agent activates in its own workspace and reads one shared brief as its source of truth. Grouped into five pods, with the build engine at the centre where software actually gets made, this is the complete operating model. I can walk through any single agent, its context, its guardrails, and exactly how it hands work to the next.</p>
+      <p class="expand-note">↳ <b>Click the diagram to view every agent full size.</b></p>
+      <figure class="shot cs-lead-img" style="margin:0">
+        <img src="../assets/img/aos-agents.jpg" alt="Full map of every agent grouped into pods: Coordination, Design, Build Engine, Growth, and Corporate and Operations">
+        <figcaption>Every agent and what it owns, across Coordination, Design, the Build Engine, Growth, and Corporate &amp; Operations</figcaption>
+      </figure>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-2col">
+        <div><div class="cs-h">What Each Function Owns</div></div>
+        <div class="cs-prose">
+          <ul class="cs-list">
+            <li><b>Product Management</b> — translates vision into specs, stories, and acceptance criteria; owns the backlog and is the sole writer of the tracker.</li>
+            <li><b>Engineering</b> — builds against the spec on isolated branches, enforces rules server-side, and owns the single merge gate.</li>
+            <li><b>Design</b> — turns problems into wired flows and signs off the experience before build.</li>
+            <li><b>Operations</b> — owns the three-environment model, pipelines, secrets, and the safe, reversible production promotion.</li>
+            <li><b>Growth</b> — owns positioning, messaging, and launch sequencing for every surface.</li>
+            <li><b>Customer Success</b> — closes the loop, feeding real-world friction back into the roadmap.</li>
+            <li><b>Quality Assurance</b> — authors test matrices, verifies on staging, and holds the blocking sign-off gate.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-2col">
+        <div><div class="cs-h">Product Decisions</div></div>
+        <div class="cs-prose">
+          <p>The core design work was governance, not prompts. I made surfaces single-owner and protected, one merge gate, one tracker writer, so concurrent agents cannot corrupt shared state.</p>
+          <p>I made review tiered so scrutiny concentrates where a mistake ends the company, auth, money, migrations, instead of spreading evenly and slowing everything. And I kept a human written-approval gate before production as non-negotiable, because automation should make the promotion safe, never remove the judgment.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-2col">
+        <div><div class="cs-h">Technology</div></div>
+        <div class="cs-prose">
+          <div class="chips"><span class="c">Claude Code</span><span class="c">Cursor</span><span class="c">ChatGPT</span><span class="c">GitHub</span><span class="c">Vercel</span><span class="c">HubSpot</span><span class="c">Resend</span><span class="c">Zoho</span><span class="c">GA4</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-callout">
+        <div class="cs-h">Outcome</div>
+        <p>This system lets me operate several businesses at once with a fraction of the manual coordination a comparable human org would need. Requirements move to shipped software through defined hand-offs, defects get caught before I see them, and the source of truth stays honest. It is not a productivity trick I use occasionally. It is the operating system my product work actually runs on.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="cs-nav">
+    <a href="che-orika.html"><small>Previous</small>← Ché Orika</a>
+    <a class="nx" href="job-hunt-cockpit.html"><small>Next</small>AI Job Hunt Cockpit →</a>
+  </div>
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <p class="foot-name">Let's build something.</p>
+    <p class="foot-sub">Open to Senior Product Manager roles and interesting problems.</p>
+    <div class="foot-links">
+      <a href="mailto:orikacherechi@gmail.com">orikacherechi@gmail.com</a>
+      <a href="https://linkedin.com/in/cherechi-orika" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a href="https://github.com/orika-cherechi" target="_blank" rel="noopener">GitHub ↗</a>
+    </div>
+    <div class="foot-fine">© 2026 Cherechi Orika · Product Portfolio</div>
+  </div>
+</footer>
+
+<div id="lightbox"><button class="lb-close" aria-label="Close">✕</button><img alt=""><div class="lb-cap"></div></div>
+<script src="../assets/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Pattern House — Case Study · Cherechi Orika</title>
+<meta name="description" content="A garment production studio's digital acquisition platform, designed and built as a sales product by Cherechi Orika.">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <a class="brand" href="../index.html">Cherechi <b>Orika</b></a>
+    <div class="nav-links">
+      <a class="hide-sm" href="../index.html#approach">Approach</a>
+      <div class="menu">
+        <button aria-haspopup="true">Case Studies ▾</button>
+        <div class="menu-panel">
+          <a href="ai-operating-system.html">AI Operating System<small>Product Lead</small></a>
+          <a href="job-hunt-cockpit.html">AI Job Hunt Cockpit<small>Product Owner</small></a>
+          <a href="the-pattern-house.html">The Pattern House<small>Product Lead &amp; Builder</small></a>
+          <a href="che-orika.html">Ché Orika<small>Founder &amp; Product Lead</small></a>
+        </div>
+      </div>
+      <a class="hide-sm" href="../index.html#contact">Contact</a>
+      <button class="toggle" id="themeToggle" aria-label="Toggle theme" title="Toggle theme">◐</button>
+    </div>
+  </div>
+</nav>
+
+<main class="wrap">
+  <section class="cs-hero" style="border:none">
+    <a class="back" href="../index.html#work">← All work</a>
+    <div class="cs-role">Product Lead &amp; Builder</div>
+    <h1>The Pattern House</h1>
+    <div class="cs-meta">
+      <span class="badge live">● Live</span>
+      <a class="case-link" href="https://thepatternhouse.co" target="_blank" rel="noopener">thepatternhouse.co ↗</a>
+      <span style="font-family:var(--mono);font-size:11px;color:var(--ink-faint)">B2B lead-generation platform</span>
+    </div>
+    <p class="cs-lead">A garment production studio's digital acquisition platform. I designed and built the live site at thepatternhouse.co as a sales product, not a brochure. Every page exists to move a stranger from "I need a factory I can trust" to a qualified inquiry sitting in a CRM pipeline, with the operational detail a production studio actually needs to quote already captured.</p>
+  </section>
+
+  <figure class="shot cs-lead-img">
+    <img src="../assets/img/ph-hero.jpg" alt="The Pattern House homepage hero">
+    <figcaption>The homepage, positioned around trust and reliability, the real drivers of a manufacturing decision</figcaption>
+  </figure>
+
+  <div class="cs-body">
+
+    <div class="cs-section">
+      <div class="cs-2col">
+        <div><div class="cs-h">The Problem</div></div>
+        <div class="cs-prose">
+          <p>Garment production in Nigeria runs on WhatsApp threads, PDF quotes, and referrals, so inquiries arrived unstructured and inconsistently qualified.</p>
+          <p>There was no pipeline, no source visibility, and every lead demanded rounds of manual back-and-forth just to learn the garment type, volume, timeline, and location before anyone could price the job. Real leads were landing with zero attribution, so the business could not even answer "where did this client come from."</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-2col">
+        <div><div class="cs-h">The Approach</div></div>
+        <div class="cs-prose">
+          <p>I treated the website as the top of a sales system rather than a standalone site.</p>
+          <ul class="cs-list">
+            <li>Designed the inquiry form as a qualification instrument that captures the exact operational data a factory needs to triage and quote, so the first human touch is a quote conversation, not a discovery interrogation.</li>
+            <li>Anchored the flow to a real 10-stage B2B production pipeline, from New Inquiry to Delivered and Closed Won, so a form submission maps cleanly onto how a factory actually sells.</li>
+            <li>Stood up a CRM as the system of record, with a warmed sending domain and a lifecycle process behind it rather than an inbox.</li>
+            <li>Instrumented the whole funnel so every inquiry carries its traffic source, campaign, and referrer, closing the attribution gap that made early leads unreadable.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-h">The Inquiry Engine</div>
+      <p class="expand-note">↳ <b>Click any image to view it full size.</b></p>
+      <div class="cs-2col" style="margin-bottom:20px">
+        <div class="cs-prose">
+          <p>The "Request a Quote" form is the product's core. It asks for the fields a factory needs to price without a phone call: brand or project name, contact details, country and region, a production description, and an approximate quantity banded to real manufacturing tiers.</p>
+          <p>On submit, a server-side function creates the CRM record, fires an instant branded acknowledgement email, and fans the lead out to the sales team in real time. I closed the attribution hole by capturing the CRM cookie, UTM parameters, and referrer on the page, so leads stop landing as "offline" and every inquiry arrives source-tagged.</p>
+        </div>
+        <figure class="shot"><img src="../assets/img/ph-inquiry.jpg" alt="Request a quote inquiry form" loading="lazy"><figcaption>The qualification form, engineered to capture production detail up front</figcaption></figure>
+      </div>
+      <div class="shot-row">
+        <figure class="shot"><img src="../assets/img/ph-process.jpg" alt="Four-step production process and testimonials" loading="lazy"><figcaption>A four-step production journey, brief to sample to finish, with client proof</figcaption></figure>
+        <figure class="shot"><img src="../assets/img/ph-services.jpg" alt="Service offerings and standards" loading="lazy"><figcaption>Service surfaces for private label, capsule collections, and bespoke work</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-2col">
+        <div><div class="cs-h">What I Built</div></div>
+        <div class="cs-prose">
+          <ul class="cs-list">
+            <li>A production website on Astro, deployed to Cloudflare Pages through a GitHub Actions pipeline, so every merge auto-builds and ships.</li>
+            <li>Service pages for the three offerings plus a four-step process, portfolio, and studio sections.</li>
+            <li>A server-side inquiry workflow, built as a Cloudflare Pages Function, that writes leads straight into the CRM.</li>
+            <li>HubSpot CRM with a 10-stage pipeline and custom lead-qualification properties, connected to Zoho Mail and Zoho Cliq.</li>
+            <li>An automated acknowledgement email on every submission via Resend, plus an internal notification fan-out to the sales channel the moment a lead lands.</li>
+            <li>GA4 and Google Tag Manager with a full lead-funnel event model and a generate_lead key event, plus Google Search Console.</li>
+            <li>Structured data, a sitemap, and an AI-search-visibility layer that classifies traffic from AI answer tools as its own channel, so the studio stays legible to both search engines and AI discovery.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-2col">
+        <div><div class="cs-h">Product Decisions</div></div>
+        <div class="cs-prose">
+          <ul class="cs-list">
+            <li><b>Website as a sales product.</b> I scoped the site around one job, converting a qualified inquiry, and built the analytics, CRM, and notification plumbing to match, rather than shipping a static page and hoping.</li>
+            <li><b>Qualify at capture, not on the call.</b> The form asks for quantity, location, and production detail up front, banded to the studio's real minimums, so the manual back-and-forth that used to precede every quote is largely eliminated before a human is involved.</li>
+            <li><b>Recover discoverability, then defend it.</b> After a visibility gap surfaced, I layered SEO structured data, Search Console, and an AI-answer channel model so the studio is findable in both classic search and AI-assisted discovery, not just by referral.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-2col">
+        <div><div class="cs-h">Technology</div></div>
+        <div class="cs-prose">
+          <div class="chips"><span class="c">Astro</span><span class="c">Cloudflare Pages</span><span class="c">Cloudflare Functions</span><span class="c">GitHub Actions</span><span class="c">HubSpot</span><span class="c">Zoho Mail &amp; Cliq</span><span class="c">Resend</span><span class="c">GA4</span><span class="c">GTM</span><span class="c">Claude Code</span><span class="c">Cursor</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-callout">
+        <div class="cs-h">Outcome</div>
+        <p>The platform turned inbound manufacturing interest into a structured, attributed pipeline. Real inquiries came through the form and converted into paying B2B production clients within weeks of launch. The CRM replaced scattered WhatsApp and PDF tracking with a single system of record, and once attribution was wired in, every new lead became traceable to its source.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="cs-nav">
+    <a href="job-hunt-cockpit.html"><small>Previous</small>← AI Job Hunt Cockpit</a>
+    <a class="nx" href="che-orika.html"><small>Next</small>Ché Orika →</a>
+  </div>
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <p class="foot-name">Let's build something.</p>
+    <p class="foot-sub">Open to Senior Product Manager roles and interesting problems.</p>
+    <div class="foot-links">
+      <a href="mailto:orikacherechi@gmail.com">orikacherechi@gmail.com</a>
+      <a href="https://linkedin.com/in/cherechi-orika" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a href="https://github.com/orika-cherechi" target="_blank" rel="noopener">GitHub ↗</a>
+    </div>
+    <div class="foot-fine">© 2026 Cherechi Orika · Product Portfolio</div>
+  </div>
+</footer>
+
+<div id="lightbox"><button class="lb-close" aria-label="Close">✕</button><img alt=""><div class="lb-cap"></div></div>
+<script src="../assets/site.js"></script>
+</body>
+</html>
