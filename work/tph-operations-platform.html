@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TPH Operations Platform — Case Study · Cherechi Orika</title>
+<meta name="description" content="The operating system behind a garment factory: leads, quotes, orders, production, quality, inventory, and money in one governed platform, designed and shipped by Cherechi Orika.">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <a class="brand" href="../index.html">Cherechi <b>Orika</b></a>
+    <div class="nav-links">
+      <a class="hide-sm" href="../index.html#approach">Approach</a>
+      <div class="menu">
+        <button aria-haspopup="true">Case Studies ▾</button>
+        <div class="menu-panel">
+          <a href="ai-operating-system.html">AI Operating System<small>Product Lead</small></a>
+          <a href="job-hunt-cockpit.html">AI Job Hunt Cockpit<small>Product Owner</small></a>
+          <a href="the-pattern-house.html">The Pattern House<small>Product Lead &amp; Builder</small></a>
+          <a href="tph-operations-platform.html">TPH Operations Platform<small>Product Lead</small></a>
+          <a href="che-orika.html">Ché Orika<small>Founder &amp; Product Lead</small></a>
+        </div>
+      </div>
+      <a class="hide-sm" href="../index.html#contact">Contact</a>
+      <button class="toggle" id="themeToggle" aria-label="Toggle theme" title="Toggle theme">◐</button>
+    </div>
+  </div>
+</nav>
+
+<main class="wrap">
+  <section class="cs-hero" style="border:none">
+    <a class="back" href="../index.html#work">← All work</a>
+    <div class="cs-role">Product Lead</div>
+    <h1>TPH Operations Platform</h1>
+    <div class="cs-meta">
+      <span class="badge live">● Live</span>
+      <span class="badge internal">Internal tool</span>
+      <span style="font-family:var(--mono);font-size:11px;color:var(--ink-faint)">Factory operating system · CRM to cash</span>
+    </div>
+    <p class="cs-lead">The system that runs The Pattern House factory floor and its books. One platform now carries a job from the first inquiry through quote, invoice, payment, production, quality control, stock, and the monthly close. I wrote the decision records, designed the money and inventory rules, ran the build with an AI engineering team, and took it from an empty repository to production in three weeks.</p>
+  </section>
+
+  <!-- GALLERY-LEAD -->
+
+  <div class="cs-body">
+
+    <div class="cs-section">
+      <div class="cs-2col">
+        <div><div class="cs-h">The Problem</div></div>
+        <div class="cs-prose">
+          <p>The website was bringing in qualified inquiries, but everything after the inquiry lived in a spreadsheet, a separate quote calculator, a CRM, WhatsApp threads, and paper receipts. None of them agreed with each other.</p>
+          <p>That gap was not cosmetic. When we traced the numbers by hand, quotes turned out to be structurally underpriced: overhead was spread across a monthly volume the studio had never actually reached, and materials carried no margin at all. Stock was bought at the market against handwritten lists, and a running total typed into a cell had already caused an over-purchase. The studio could not answer "what is this order really making us" without a day of reconciliation.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-2col">
+        <div><div class="cs-h">The Approach</div></div>
+        <div class="cs-prose">
+          <p>I treated arithmetic as the product. Before a screen was designed, I wrote a binding decision record for how inventory and money behave, so every engineer built against the same rules.</p>
+          <ul class="cs-list">
+            <li>Derive, never store. On-hand, reserved, available, and incoming stock are calculated on read from an immutable ledger. A stored total is exactly what had caused the over-purchase, so I banned it at review.</li>
+            <li>Model how the studio actually works, not how software usually assumes. Buying is a purchase request that production raises, an admin approves and pays, someone buys at the market with a receipt photo, and stock is received against the order. There is no supplier module, because the studio has no suppliers in that sense.</li>
+            <li>Statuses are data with behaviour flags. Whether a status reserves stock or counts toward money is a flag on the row, never its name, so renaming a status in Settings cannot silently break the stock maths.</li>
+            <li>A lead becomes a client at the first payment, in the same transaction that opens the order and records the receipt. Quotes stay editable under the same number until money lands against them.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- GALLERY-MAIN -->
+
+    <div class="cs-section">
+      <div class="cs-2col">
+        <div><div class="cs-h">What I Built</div></div>
+        <div class="cs-prose">
+          <ul class="cs-list">
+            <li>A sales layer with leads, a staged deal pipeline, contact history, and clients, replacing the spreadsheet and the CRM pipeline as the studio's system of record.</li>
+            <li>Quotes, invoices, and receipts on one numbering series, each rendering to a one-page A4 PDF. An invoice can be raised on a lead for a sample fee, and paying it converts the lead.</li>
+            <li>Orders with sample and bulk legs, a production plan per order, step plans, drag-to-replan lines, and printable job sheets.</li>
+            <li>Quality control with inspections tied to the exact style, defects, and rework that stays open until it is closed.</li>
+            <li>Inventory and purchasing as one section, with an over-commit alarm that lets available stock go negative on purpose so a shortage is visible before it becomes a late order.</li>
+            <li>Finance with payments, refunds, an audited order adjustment, and a monthly close that refuses edits once a month is closed.</li>
+            <li>A Marketing section that syncs GA4, Search Console, and Microsoft Clarity four times a day, plus first-party events beaconed from the public website, so lead sources sit next to the deals they produced.</li>
+            <li>People, roles, and an owner-only test-data purge that deletes a demo chain in one transaction and leaves a single audit event behind.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-2col">
+        <div><div class="cs-h">Product Decisions</div></div>
+        <div class="cs-prose">
+          <ul class="cs-list">
+            <li><b>Gate money on the read, not the button.</b> Three fixed roles, Admin, Production, and Floor, plus a separate finance-access flag. Order value, payments, quotes, and margin are stripped from server responses for anyone without it. Production is allowed to see and enter purchase costs, because they do the buying, and nothing else.</li>
+            <li><b>Derive dates the client must never see.</b> The production deadline is five working days before the client's due date, calculated on the server from the one stored date. It is never a second stored field and never a front-end subtraction.</li>
+            <li><b>Every write is audited by construction.</b> All mutations go through one wrapper that writes the audit event inside the same transaction, and a CI guard fails the build if a write sneaks around it.</li>
+            <li><b>Copy proven layouts, not code.</b> When the first leads screen shipped without a design and fell flat, I had the team map each screen to established CRM patterns, list views, deal boards, record pages with a timeline, and rebuild on permissively licensed components with the studio's own look.</li>
+            <li><b>Spend nothing new on infrastructure.</b> The platform runs as a second project inside the existing hosting team, with its own Postgres database in a separate account and functions pinned to the region next to the database. Incremental cost: zero per month.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-2col">
+        <div><div class="cs-h">The Hardest Problem</div></div>
+        <div class="cs-prose">
+          <p>Cutting over from the spreadsheet. The sheet held every lead, deal, contact, order, and receipt since the studio opened, with duplicates, a template row posing as a real receipt, and totals that had drifted from the line items. I would not switch the studio over on an import that was "close".</p>
+          <p>We wrote the import as a rehearsed script that had to reconcile every receipt to the kobo before it was allowed to touch production, ran it against copies until it passed with zero stops, froze the sheet, took a database backup, migrated, imported, and released in one window. Every lead, deal, contact, client, order, and receipt came across and verified one to one. The sheet is now read-only history.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-2col">
+        <div><div class="cs-h">Technology</div></div>
+        <div class="cs-prose">
+          <div class="chips"><span class="c">Next.js App Router</span><span class="c">TypeScript</span><span class="c">Neon PostgreSQL</span><span class="c">Prisma 7</span><span class="c">Better Auth</span><span class="c">shadcn/ui</span><span class="c">TanStack Table</span><span class="c">Vercel</span><span class="c">Playwright</span><span class="c">GitHub Actions</span><span class="c">GA4 &amp; Search Console APIs</span><span class="c">Microsoft Clarity</span><span class="c">Claude Code</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-callout">
+        <div class="cs-h">Outcome</div>
+        <p>The platform went live on 21 September 2026, three weeks after the first commit, and went to production sixteen times in its first four weeks. Over 250 pull requests have merged, each through a review gate and a release checklist. The factory now quotes, invoices, plans, inspects, buys, and closes the month in one place, and the question "what is this order really making us" has an answer on the screen instead of in a spreadsheet.</p>
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-2col">
+        <div><div class="cs-h">What I Learned</div></div>
+        <div class="cs-prose">
+          <p>Green ticks are not evidence. At the first user acceptance round, more than three hundred unit tests were passing and the floor still found 33 problems, because nothing could click a button and the CI pipeline was not even running the tests. We added a real production build and Playwright journeys against the deployed staging app, and discovered that a quarter of the test files were checking that the code looked right rather than that it worked. Now I ask what a test actually exercises before I count it.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="cs-nav">
+    <a href="the-pattern-house.html"><small>Previous</small>← The Pattern House</a>
+    <a class="nx" href="che-orika.html"><small>Next</small>Ché Orika →</a>
+  </div>
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <p class="foot-name">Let's build something.</p>
+    <p class="foot-sub">Open to Senior Product Manager roles and interesting problems.</p>
+    <div class="foot-links">
+      <a href="mailto:orikacherechi@gmail.com">orikacherechi@gmail.com</a>
+      <a href="https://linkedin.com/in/cherechi-orika" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a href="https://github.com/orika-cherechi" target="_blank" rel="noopener">GitHub ↗</a>
+    </div>
+    <div class="foot-fine">© 2026 Cherechi Orika · Product Portfolio</div>
+  </div>
+</footer>
+
+<div id="lightbox"><button class="lb-close" aria-label="Close">✕</button><img alt=""><div class="lb-cap"></div></div>
+<script src="../assets/site.js"></script>
+</body>
+</html>

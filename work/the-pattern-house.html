@@ -20,6 +20,7 @@
           <a href="ai-operating-system.html">AI Operating System<small>Product Lead</small></a>
           <a href="job-hunt-cockpit.html">AI Job Hunt Cockpit<small>Product Owner</small></a>
           <a href="the-pattern-house.html">The Pattern House<small>Product Lead &amp; Builder</small></a>
+          <a href="tph-operations-platform.html">TPH Operations Platform<small>Product Lead</small></a>
           <a href="che-orika.html">Ché Orika<small>Founder &amp; Product Lead</small></a>
         </div>
       </div>
@@ -122,6 +123,21 @@
 
     <div class="cs-section">
       <div class="cs-2col">
+        <div><div class="cs-h">After Launch</div></div>
+        <div class="cs-prose">
+          <p>Launch was the start of the product, not the end. Four pieces of post-launch work changed how the site performs and how I run it.</p>
+          <ul class="cs-list">
+            <li><b>Diagnosing a lead drought.</b> Inquiries stopped for a month. The instinct was "the form is broken"; the evidence said otherwise. I traced it to a rebuild that had dropped the site out of Google's index, then found two silent failures on the way: WhatsApp lead alerts that the provider accepted but never delivered, and a trailing space in a hand-typed setting that broke the team chat alerts. I fixed both, ran an environment-hygiene sweep, and added a "How did you hear about us?" question, kept separate from automatic attribution, with AI assistants as an explicit option. AI answer tools became the top self-reported source, named by 13 of 17 inquiries in one four-week window.</li>
+            <li><b>A funnel review that overturned a redesign.</b> When submissions dipped I convened design, data, and engineering on the numbers. The leak was reach, not the form: only about a third of homepage visitors ever reached it, while about 61 percent of people who started it finished. Analytics was overcounting leads by 2.4 times because other forms fired the same event. A redesigned form I had shipped produced zero leads in four days, so I rolled it back. The rule now is that any form or call-to-action change gets a 72-hour before-and-after scorecard.</li>
+            <li><b>A careers system on the same engine.</b> A data-driven careers section where adding a role is one entry in a data file: listing, detail page, job-posting structured data, CV upload with validation, and an automatic acknowledgement. Applicants stay out of the sales CRM, and each role can carry its own questions and employer template, so a Ché Orika Group role runs on the same code.</li>
+            <li><b>Safer previews and first-party data.</b> Preview deployments run in a sandbox that cannot touch the live CRM or alert channels, and the site now beacons its own funnel events into the studio's <a href="tph-operations-platform.html">operations platform</a>, where inquiries land as leads.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-2col">
         <div><div class="cs-h">Technology</div></div>
         <div class="cs-prose">
           <div class="chips"><span class="c">Astro</span><span class="c">Cloudflare Pages</span><span class="c">Cloudflare Functions</span><span class="c">GitHub Actions</span><span class="c">HubSpot</span><span class="c">Zoho Mail &amp; Cliq</span><span class="c">Resend</span><span class="c">GA4</span><span class="c">GTM</span><span class="c">Claude Code</span><span class="c">Cursor</span></div>
@@ -132,7 +148,7 @@
     <div class="cs-section">
       <div class="cs-callout">
         <div class="cs-h">Outcome</div>
-        <p>The platform turned inbound manufacturing interest into a structured, attributed pipeline. Real inquiries came through the form and converted into paying B2B production clients within weeks of launch. The CRM replaced scattered WhatsApp and PDF tracking with a single system of record, and once attribution was wired in, every new lead became traceable to its source.</p>
+        <p>The platform turned inbound manufacturing interest into a structured, attributed pipeline. Real inquiries came through the form and converted into paying B2B production clients within weeks of launch. The CRM replaced scattered WhatsApp and PDF tracking with a single system of record, and once attribution was wired in, every new lead became traceable to its source. Today the site feeds the studio's own operations platform directly, so an inquiry becomes a lead, a quote, and an order without being retyped.</p>
       </div>
     </div>
 
@@ -140,7 +156,7 @@
 
   <div class="cs-nav">
     <a href="job-hunt-cockpit.html"><small>Previous</small>← AI Job Hunt Cockpit</a>
-    <a class="nx" href="che-orika.html"><small>Next</small>Ché Orika →</a>
+    <a class="nx" href="tph-operations-platform.html"><small>Next</small>TPH Operations Platform →</a>
   </div>
 </main>
 

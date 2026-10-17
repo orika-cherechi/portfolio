@@ -20,6 +20,7 @@
           <a href="ai-operating-system.html">AI Operating System<small>Product Lead</small></a>
           <a href="job-hunt-cockpit.html">AI Job Hunt Cockpit<small>Product Owner</small></a>
           <a href="the-pattern-house.html">The Pattern House<small>Product Lead &amp; Builder</small></a>
+          <a href="tph-operations-platform.html">TPH Operations Platform<small>Product Lead</small></a>
           <a href="che-orika.html">Ché Orika<small>Founder &amp; Product Lead</small></a>
         </div>
       </div>
@@ -35,16 +36,16 @@
     <div class="cs-role">Founder &amp; Product Lead</div>
     <h1>Ché Orika</h1>
     <div class="cs-meta">
-      <span class="badge beta">Private Beta</span>
+      <span class="badge live">● Live</span>
       <a class="case-link" href="https://cheorika.com" target="_blank" rel="noopener">cheorika.com ↗</a>
       <span class="wc-stack" style="font-family:var(--mono);font-size:11px;color:var(--ink-faint)">Multi-tenant commerce platform</span>
     </div>
-    <p class="cs-lead">A full-stack, multi-tenant commerce platform I built to run a fashion business end to end, not just to sell online. It pairs a premium storefront with an operational admin portal that is the single source of truth for identity, catalog, inventory, orders, payments, media, and audit. I designed the architecture, wrote the PRDs, made the technical calls, and shipped it with an AI-assisted engineering workflow.</p>
+    <p class="cs-lead">A full-stack, multi-tenant commerce platform I built to run a fashion business end to end, not just to sell online. It pairs a premium storefront with an operational admin portal that is the single source of truth for identity, catalog, inventory, orders, payments, media, and audit. I designed the architecture, wrote the PRDs, made the technical calls, and shipped it with an AI-assisted engineering workflow. It has been live and taking real orders since September 2026, across the website, the boutique, WhatsApp, Instagram, and phone.</p>
   </section>
 
   <figure class="shot cs-lead-img">
     <img src="../assets/img/co-hero.jpg" alt="Ché Orika storefront editorial hero">
-    <figcaption>The customer storefront, live at cheorika.com</figcaption>
+    <figcaption>The customer storefront, live at cheorika.com, in the brand's v1.0 identity</figcaption>
   </figure>
 
   <div class="cs-body">
@@ -98,8 +99,23 @@
             <li><b>RBAC &amp; user management (live).</b> Four roles, Owner, Admin, Staff, and Trainee, driven by a versioned permission catalog. People management, tokenized single-use invitations, multi-owner support, immutable audit logging, and an activity feed.</li>
             <li><b>Dashboards (live).</b> A full KPI dashboard for Owners and Admins, and a separate money-free operations dashboard for Staff and Trainees.</li>
             <li><b>Product catalog.</b> Products as concepts with dynamically generated variants, per-variant pricing with VAT, per-brand auto SKUs plus printable barcodes, hierarchical categories, many-to-many collections, signed media uploads, draft autosave, and soft-delete with restore.</li>
+            <li><b>Inventory and point of sale (live).</b> One shared stock pool per variant that the website and the boutique till both draw from. Every sale writes an immutable stock movement in the same transaction as a guarded decrement, so overselling is impossible rather than unlikely. Twelve-minute checkout reservations, CSV stock import, and server-side price authority at the till.</li>
+            <li><b>Storefront CMS (live).</b> The portal runs the storefront: fourteen homepage section types, eleven store pages, collections and scheduled drops, search with filters, SEO metadata, and social share cards on permanent public image URLs. The CMS controls content, order, and visibility, never layout, so the designed homepage cannot be broken from an admin form.</li>
+            <li><b>Checkout and money (live).</b> Store credit, coupons, and a wishlist on top of the existing cart and Paystack checkout, with live courier rates and booking through Shipbubble.</li>
+            <li><b>Orders and fulfilment (live).</b> An order workflow engine with an explicit transition guard, returns, refunds to store credit or exchange, notifications, and a sales analytics dashboard. The guard closed a real bug where cancelling an already-shipped order would have put its stock back on the shelf.</li>
+            <li><b>Five sales channels (live).</b> Boutique, WhatsApp, Instagram, and phone sales are recorded in the portal alongside online orders, so one stock count and one sales report cover every channel. Staff use it daily.</li>
+            <li><b>Brand system re-skin (live).</b> A full move to the brand's v1.0 identity, which meant first replacing colours hard-coded across the storefront with design tokens, then re-skinning colour and type while keeping page structure intact.</li>
+            <li><b>Discovery (live).</b> A product feed to Google Merchant Center for free shopping listings, with over a hundred products approved, plus structured data and an SEO sweep across the storefront.</li>
           </ul>
         </div>
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-h">The storefront today</div>
+      <div class="shot-row">
+        <figure class="shot"><img src="../assets/img/co-shop.jpg" alt="Ché Orika shop page with category tabs and filters" loading="lazy"><figcaption>Shop with category, size, colour, and in-stock filters, all driven from the portal</figcaption></figure>
+        <figure class="shot"><img src="../assets/img/co-pdp.jpg" alt="Ché Orika product page" loading="lazy"><figcaption>A product page with live sale pricing set from the admin portal</figcaption></figure>
       </div>
     </div>
 
@@ -107,7 +123,7 @@
       <div class="cs-2col">
         <div><div class="cs-h">The Hardest Problem</div></div>
         <div class="cs-prose">
-          <p>The catalog and inventory model was the deep work. Fashion breaks naive product tables: a "product" is a concept, and the thing you actually sell, price, count, and scan is the <strong>variant</strong>, so inventory lives at variant-by-store, never on the product.</p>
+          <p>The catalog and inventory model was the deep work. Fashion breaks naive product tables: a "product" is a concept, and the thing you actually sell, price, count, and scan is the <strong>variant</strong>, so inventory lives on the variant, never on the product.</p>
           <p>Getting that right meant per-brand-unique SKUs, scannable barcodes, variant generation that stays efficient and bounded, and money modelled as Decimal to kill a rounding bug at the schema level. The sharpest nuance was the cost and margin firewall: pricing edits are Owner and Admin only, and Staff must never see cost or margin at all. I gated that on the read boundary, not just by hiding UI, so cost and margin are stripped from payloads and the server returns a 403, fail-closed. "Already exposed on another screen" is not an acceptable reason to leak it.</p>
         </div>
       </div>
@@ -120,6 +136,8 @@
           <ul class="cs-list">
             <li><b>Build an operating system, not a storefront.</b> The admin portal is the source of truth, designed around operational efficiency, so the storefront is one channel over a governed core rather than the system of record.</li>
             <li><b>Decouple the catalog to protect live revenue.</b> Rather than evolve the legacy storefront tables under live load, I stood up a parallel brand-scoped schema so a large build could never break checkout, and accepted a deliberate future cutover as the cost.</li>
+            <li><b>Pay for the cutover while it is cheap.</b> A code audit showed we were running two parallel commerce systems, the original single-brand checkout and the new multi-brand catalog, both with no customers yet. I chose to collapse them into one immediately: keep the proven checkout code, drop the throwaway data, and port the money paths onto the new catalog. Adversarial QA then had to prove brand isolation, webhook replay safety, and no oversell at ten thousand variants and over a hundred thousand stock movements before release.</li>
+            <li><b>Harden what exists before building what does not.</b> When the checkout sprint was scoped, a review showed about 80 percent of it already existed. I reframed the sprint as hardening and go-live, and adversarial testing caught two critical money bugs, including store credit being lost on a failed payment. Each needed more than one fix, because the first fix left a sibling path open. Now we verify the class of bug, not the instance.</li>
             <li><b>Gate money and PII fail-closed by role.</b> Cost, margin, revenue, and exports are enforced at the read boundary with server-side 403s and payload stripping, defaulting to closed unless the role is privileged.</li>
           </ul>
         </div>
@@ -131,7 +149,7 @@
         <div><div class="cs-h">Technology</div></div>
         <div class="cs-prose">
           <div class="chips">
-            <span class="c">Next.js</span><span class="c">TypeScript</span><span class="c">Neon PostgreSQL</span><span class="c">Prisma</span><span class="c">Better Auth</span><span class="c">Cloudinary</span><span class="c">Paystack</span><span class="c">Resend</span><span class="c">Vercel</span><span class="c">Claude Code</span><span class="c">Cursor</span><span class="c">ChatGPT</span>
+            <span class="c">Next.js</span><span class="c">TypeScript</span><span class="c">Neon PostgreSQL</span><span class="c">Prisma</span><span class="c">Better Auth</span><span class="c">Cloudinary</span><span class="c">Paystack</span><span class="c">Resend</span><span class="c">Shipbubble</span><span class="c">Google Merchant Center</span><span class="c">Playwright</span><span class="c">Vercel</span><span class="c">Claude Code</span><span class="c">Cursor</span><span class="c">ChatGPT</span>
           </div>
         </div>
       </div>
@@ -141,13 +159,14 @@
       <div class="cs-callout">
         <div class="cs-h">What I Learned</div>
         <p>Running an AI engineering team taught me that the product manager's leverage is in the guardrails: crisp specs, decision records that capture why, and release gates. My hardest lesson was that "all green" can still be wrong. A sprint passed per-screen review and endpoint checks, yet a wizard was never wired to its backends. Now I verify render-deep and data-deep, walking the whole journey, not just confirming screens render and endpoints return 200.</p>
+        <p>Production taught me the same lesson again. Our database hit its plan quota and the shop kept returning HTTP 200, with the header, navigation, and copy all present, and zero products and zero prices. A status check would have passed it. A data-and-render regression check caught it. Since then, every release is verified on production as its own environment, by looking at real data on the real page.</p>
       </div>
     </div>
 
   </div>
 
   <div class="cs-nav">
-    <a href="the-pattern-house.html"><small>Previous</small>← The Pattern House</a>
+    <a href="tph-operations-platform.html"><small>Previous</small>← TPH Operations Platform</a>
     <a class="nx" href="ai-operating-system.html"><small>Next</small>AI Operating System →</a>
   </div>
 </main>
