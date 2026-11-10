@@ -3,183 +3,261 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cherechi Orika — Product Portfolio</title>
-<meta name="description" content="Senior Product Manager and AI-native product builder. Enterprise SaaS, B2B platforms, marketplace products.">
+<title>Cherechi Orika · Product Manager</title>
+<meta name="description" content="Product manager with seven years across B2B SaaS, HealthTech, marketplaces and commerce. From zero-to-one MVPs to enterprise platforms, and products I build end to end with AI.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap">
 <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
 
-<nav>
+<header class="nav">
   <div class="nav-in">
-    <a class="brand" href="index.html">Cherechi <b>Orika</b></a>
-    <div class="nav-links">
-      <a class="hide-sm" href="#about">About</a>
-      <a class="hide-sm" href="#approach">Approach</a>
-      <div class="menu">
-        <button aria-haspopup="true">Case Studies ▾</button>
-        <div class="menu-panel">
-          <a href="work/ai-operating-system.html">AI Operating System<small>Product Lead</small></a>
-          <a href="work/job-hunt-cockpit.html">AI Job Hunt Cockpit<small>Product Owner</small></a>
-          <a href="work/the-pattern-house.html">The Pattern House<small>Product Lead &amp; Builder</small></a>
-          <a href="work/tph-operations-platform.html">TPH Operations Platform<small>Product Lead</small></a>
-          <a href="work/che-orika.html">Ché Orika<small>Founder &amp; Product Lead</small></a>
-        </div>
-      </div>
-      <a class="hide-sm" href="#contact">Contact</a>
-      <button class="toggle" id="themeToggle" aria-label="Toggle theme" title="Toggle theme">◐</button>
-    </div>
+    <a class="brand" href="index.html"><span class="dot"></span>Cherechi Orika</a>
+    <nav class="nav-links">
+      <a href="#work">Case studies</a>
+      <a class="hide-sm" href="#approach">How I work</a>
+      <a class="hide-sm" href="#experience">Experience</a>
+      <a class="cta" href="#contact">Get in touch</a>
+    </nav>
   </div>
-</nav>
+</header>
 
-<div class="wrap">
+<main>
 
-  <header class="hero">
-    <div class="eyebrow">Product Portfolio</div>
-    <h1 class="name">Cherechi Orika</h1>
-    <div class="role-line">Senior Product Manager</div>
-    <div class="disciplines">Enterprise SaaS · B2B Platforms · Marketplace Products · AI-Native Product Builder</div>
-    <p class="hero-intro">I combine product thinking with AI-native execution to validate ideas fast and ship real software. Five plus years across HealthTech, TalentTech, and SaaS, and a growing shelf of products I have built end to end.</p>
-    <div class="contacts">
-      <a href="mailto:orikacherechi@gmail.com">
-        <svg viewBox="0 0 24 24"><path d="M2 5.5A1.5 1.5 0 0 1 3.5 4h17A1.5 1.5 0 0 1 22 5.5v13A1.5 1.5 0 0 1 20.5 20h-17A1.5 1.5 0 0 1 2 18.5v-13Zm2.2.5 7.8 5.6L19.8 6H4.2ZM20 7.7l-7.4 5.3a1 1 0 0 1-1.2 0L4 7.7V18h16V7.7Z"/></svg>
-        orikacherechi@gmail.com</a>
-      <a href="https://linkedin.com/in/cherechi-orika" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0-.02-5ZM3 9h4v12H3V9Zm6 0h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C20.4 8.65 22 10.6 22 14v7h-4v-6.2c0-1.48-.03-3.38-2.06-3.38-2.06 0-2.37 1.6-2.37 3.27V21H9V9Z"/></svg>
-        linkedin.com/in/cherechi-orika</a>
-      <a href="https://github.com/orika-cherechi" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.36 1.09 2.94.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.6 9.6 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg>
-        github.com/orika-cherechi</a>
+  <!-- 1. WHO: what kind of PM -->
+  <section class="wrap h-hero">
+    <div class="h-hero-text">
+      <span class="eyebrow">Product Manager</span>
+      <h1 class="h-xl">I take products from a messy problem to something people use.</h1>
+      <p class="lead">Seven years across B2B SaaS, HealthTech, marketplaces and commerce: from zero-to-one MVPs to enterprise platforms used by 500+ organisations. I work out what is really broken, design the workflow, ship it with the team, and measure what changed. When it's the fastest way to prove an idea, I build it myself with AI.</p>
+      <div class="btns">
+        <a class="btn primary" href="#work">See the work <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn" href="mailto:cherechiorika@gmail.com">Email me</a>
+        <a class="btn" href="https://www.linkedin.com/in/cherechi-orika/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
     </div>
-  </header>
-
-  <!-- ABOUT -->
-  <section id="about" class="about">
-    <div class="sec-label"><span class="sec-num">01</span><h2>About</h2></div>
-    <p>I am a Product Manager with five plus years of experience building enterprise SaaS, B2B platforms, marketplace products, and AI-enabled software across HealthTech, TalentTech, and SaaS.</p>
-    <p>Outside of my full-time roles, I build products myself using AI. Rather than using AI only for writing or brainstorming, I use it throughout the entire product lifecycle, from customer discovery and PRDs to engineering, debugging, deployment, analytics, and workflow automation. This portfolio showcases selected products I have built, and shows how I combine product thinking with AI-native execution to rapidly validate ideas and ship software.</p>
+    <aside class="h-card" aria-label="At a glance">
+      <div class="h-card-row"><span>Now</span><b>Senior Product Manager, SearchAtlas</b></div>
+      <div class="h-card-row"><span>Focus</span><b>B2B SaaS, internal tools, marketplaces, AI products</b></div>
+      <div class="h-card-row"><span>Experience</span><b>7 years · B2B SaaS, HealthTech, marketplaces, commerce</b></div>
+      <div class="h-card-row"><span>Builds</span><b>3 live products shipped end to end with AI</b></div>
+      <div class="h-card-row"><span>Based</span><b>Abuja, Nigeria · remote, overlaps US and EU hours</b></div>
+    </aside>
   </section>
 
-  <!-- APPROACH -->
-  <section id="approach">
-    <div class="sec-label"><span class="sec-num">02</span><h2>How I build with AI</h2></div>
-    <p class="sec-sub">AI is embedded across my product development workflow, not bolted on at the end. Here is where it works, phase by phase, and the tools I reach for.</p>
-    <div class="phases">
-      <div class="phase">
-        <h3>Product Discovery</h3>
-        <ul><li>Customer interviews</li><li>Competitor research</li><li>Jobs-to-be-Done</li><li>Opportunity mapping</li><li>Product strategy</li><li>Feature ideation</li></ul>
-        <div class="tools"><span class="tk">Tools</span><span class="tl">ChatGPT</span><span class="tl">Claude</span></div>
-      </div>
-      <div class="phase">
-        <h3>Product Planning</h3>
-        <ul><li>PRDs</li><li>User stories</li><li>Acceptance criteria</li><li>Roadmaps</li><li>Prioritization</li><li>Release planning</li></ul>
-        <div class="tools"><span class="tk">Tools</span><span class="tl">Claude</span><span class="tl">ChatGPT</span><span class="tl">Notion AI</span></div>
-      </div>
-      <div class="phase">
-        <h3>UX &amp; Product Design</h3>
-        <ul><li>User flows</li><li>Information architecture</li><li>UX reviews</li><li>Design critiques</li><li>Wireframes</li></ul>
-        <div class="tools"><span class="tk">Tools</span><span class="tl">Figma</span><span class="tl">Claude</span><span class="tl">ChatGPT</span></div>
-      </div>
-      <div class="phase">
-        <h3>Engineering</h3>
-        <div class="p-desc">AI as my engineering partner to build production-ready software.</div>
-        <ul><li>System architecture</li><li>Database modelling</li><li>Feature implementation</li><li>Debugging</li><li>Refactoring</li><li>Code reviews</li><li>Testing</li></ul>
-        <div class="tools"><span class="tk">Tools</span><span class="tl">Claude Code</span><span class="tl">Cursor</span><span class="tl">ChatGPT</span><span class="tl">GitHub</span></div>
-      </div>
-      <div class="phase">
-        <h3>Launch</h3>
-        <ul><li>Analytics</li><li>CRM integration</li><li>Event tracking</li><li>Email automation</li><li>Product rollouts</li></ul>
-        <div class="tools"><span class="tk">Tools</span><span class="tl">HubSpot</span><span class="tl">GA4</span><span class="tl">GTM</span><span class="tl">Resend</span><span class="tl">Zoho</span></div>
-      </div>
-      <div class="phase">
-        <h3>Continuous Improvement</h3>
-        <div class="p-desc">After launch, analytics and AI to keep learning.</div>
-        <ul><li>Analyse behaviour</li><li>Identify bottlenecks</li><li>Prioritize features</li><li>Generate experiments</li><li>Improve adoption</li></ul>
-        <div class="tools"><span class="tk">Tools</span><span class="tl">GA4</span><span class="tl">HubSpot</span><span class="tl">Claude</span></div>
+  <section class="wrap h-logos" aria-label="Companies">
+    <span>Where I've done this</span>
+    <ul><li>SearchAtlas</li><li>Reliance Health</li><li>Vertex Software</li><li>Decagon</li><li>Spritz</li><li>The Pattern House</li></ul>
+  </section>
+
+  <!-- 2. RANGE: what I bring, each with its proof -->
+  <section class="section h-fix">
+    <div class="wrap">
+      <span class="eyebrow">What I bring</span>
+      <h2 class="h-lg" style="margin-top:14px">Range, with results at every stage</h2>
+      <div class="fix-grid four">
+        <div class="fix reveal">
+          <span class="fix-n">01</span>
+          <h3>Zero to one</h3>
+          <p>Taking an idea to a first product people actually use.</p>
+          <div class="proof"><b>0 → 782</b><span>users in under six months on a new marketplace</span></div>
+          <div class="proof"><b>~60%</b><span>retention on a two-sided marketplace MVP</span></div>
+        </div>
+        <div class="fix reveal">
+          <span class="fix-n">02</span>
+          <h3>Enterprise platforms</h3>
+          <p>Products that many organisations depend on, at scale.</p>
+          <div class="proof"><b>1 week → 1 day</b><span>enterprise onboarding for 500+ organisations</span></div>
+          <div class="proof"><b>60%</b><span>less funnel drop-off from a CRM integration</span></div>
+        </div>
+        <div class="fix reveal">
+          <span class="fix-n">03</span>
+          <h3>Growth and retention</h3>
+          <p>Getting more customers to stay, use and pay.</p>
+          <div class="proof"><b>35% → 48%</b><span>trial-to-paid conversion on a B2B SaaS product</span></div>
+          <div class="proof"><b>0 churn</b><span>observed across 170+ high-value accounts</span></div>
+        </div>
+        <div class="fix reveal">
+          <span class="fix-n">04</span>
+          <h3>Building with AI</h3>
+          <p>Designing and shipping real products end to end myself.</p>
+          <div class="proof"><b>3 live products</b><span>including a factory platform shipped in three weeks</span></div>
+          <div class="proof"><b>45 → 15 days</b><span>to win a client after it launched</span></div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- WORK -->
-  <section id="work">
-    <div class="sec-label"><span class="sec-num">03</span><h2>Selected work</h2></div>
-    <p class="sec-sub">Five products, built with AI as a partner across discovery, design, engineering, and launch. Click any project to read the full case study, with the architecture, product decisions, and screenshots behind it.</p>
+  <!-- 3. PROOF: case studies, one story per row -->
+  <section class="section" id="work">
+    <div class="wrap">
+      <span class="eyebrow">Selected work</span>
+      <h2 class="h-lg" style="margin-top:14px">Case studies</h2>
+      <p class="lead" style="margin-top:12px">Five stories, each told the same way: the problem, what I did, and what changed.</p>
 
-    <div class="group-label">AI Projects</div>
-    <div class="work-grid">
-      <a class="work-card" href="work/ai-operating-system.html">
-        <div class="wc-img"><img src="assets/img/aos-board.jpg" alt="AI Operating System sprint board" loading="lazy"></div>
-        <div class="wc-body">
-          <div class="wc-top"><span class="wc-role">Product Lead</span><span class="badge internal">Internal</span></div>
-          <h3>AI Operating System</h3>
-          <p>AI as the operating system behind my businesses: a specialized agent for every function, connected by governed hand-offs and release gates.</p>
-          <div class="wc-foot"><span class="wc-cta">Read case study →</span><span class="wc-stack">Claude Code · Cursor · GitHub</span></div>
-        </div>
-      </a>
-      <a class="work-card" href="work/job-hunt-cockpit.html">
-        <div class="wc-img"><img src="assets/img/jh-dashboard.jpg" alt="AI Job Hunt Cockpit dashboard" loading="lazy"></div>
-        <div class="wc-body">
-          <div class="wc-top"><span class="wc-role">Product Owner</span><span class="badge internal">Local-first</span></div>
-          <h3>AI Job Hunt Cockpit</h3>
-          <p>A local-first assistant that discovers remote PM roles, scores fit, tailors resumes and cover letters, exports PDFs, and tracks everything.</p>
-          <div class="wc-foot"><span class="wc-cta">Read case study →</span><span class="wc-stack">Next.js · Playwright · Claude Code</span></div>
-        </div>
-      </a>
-    </div>
+      <div class="cs-list">
 
-    <div class="group-label">Live Products</div>
-    <div class="work-grid">
-      <a class="work-card" href="work/the-pattern-house.html">
-        <div class="wc-img"><img src="assets/img/ph-hero.jpg" alt="The Pattern House homepage" loading="lazy"></div>
-        <div class="wc-body">
-          <div class="wc-top"><span class="wc-role">Product Lead &amp; Builder</span><span class="badge live">● Live</span></div>
-          <h3>The Pattern House</h3>
-          <p>A garment studio's website rebuilt as a sales product: every inquiry lands qualified and attributed, and a funnel review taught me to measure every change.</p>
-          <div class="wc-foot"><span class="wc-cta">Read case study →</span><span class="wc-stack">Astro · Cloudflare · HubSpot</span></div>
+        <article class="cs-row reveal">
+          <a class="cs-visual diagram" href="work/b2b-saas-platform.html" aria-hidden="true" tabindex="-1">
+            <div class="mini-flow"><span>Engagement drops</span><i>→</i><span>Below threshold</span><i>→</i><span class="hot">Task for the SDR</span><i>→</i><span>Account saved</span></div>
+          </a>
+          <div class="cs-text">
+            <div class="cs-meta"><span class="cs-num">01</span>B2B SaaS platform · 12K+ monthly users</div>
+            <h3><a href="work/b2b-saas-platform.html">The product knew who was leaving. Sales didn't.</a></h3>
+            <dl class="cs-pwr">
+              <div><dt>Problem</dt><dd>Usage signals lived in analytics, while the salespeople who could act on them worked in the CRM.</dd></div>
+              <div><dt>What I did</dt><dd>Defined what "declining" means, then automated alerts that create a CRM task for the account owner. Rebuilt onboarding around customer goals, so 80% of new users who take the tour succeed in their first week.</dd></div>
+              <div><dt>Result</dt><dd><b>0 observed churn</b> across 170+ high-value accounts. Subscriber churn down <b>16%</b> and lifetime value up <b>22%</b>. On day one, the alert system flagged <b>$24K a year</b> of revenue at risk, before the customers cancelled. Trial-to-paid up from <b>35% to 48%</b>.</dd></div>
+            </dl>
+            <a class="cs-go" href="work/b2b-saas-platform.html">Read the case study →</a>
+          </div>
+        </article>
+
+        <article class="cs-row flip reveal">
+          <a class="cs-visual diagram" href="work/healthtech-enterprise.html" aria-hidden="true" tabindex="-1">
+            <div class="mini-flow"><span>New lead</span><i>→</i><span>Qualified</span><i>→</i><span>Proposal</span><i>→</i><span class="hot">Won → onboarded</span></div>
+          </a>
+          <div class="cs-text">
+            <div class="cs-meta"><span class="cs-num">02</span>HealthTech company</div>
+            <h3><a href="work/healthtech-enterprise.html">Deals were won in one place and delivered in another.</a></h3>
+            <dl class="cs-pwr">
+              <div><dt>Problem</dt><dd>Outreach, ownership and hand-offs were spread across Salesforce, chats and documents. Onboarding a new employer was manual and took about a week.</dd></div>
+              <div><dt>What I did</dt><dd>Mapped the process with the sales team, then built one in-product pipeline from outreach to renewal and self-serve enterprise onboarding.</dd></div>
+              <div><dt>Result</dt><dd>Onboarding cut from <b>a week to a day</b>, with <b>80% less</b> implementation effort across 500+ organisations.</dd></div>
+            </dl>
+            <a class="cs-go" href="work/healthtech-enterprise.html">Read the case study →</a>
+          </div>
+        </article>
+
+        <article class="cs-row reveal">
+          <a class="cs-visual" href="work/tph-operations-platform.html" aria-hidden="true" tabindex="-1"><img src="assets/img/ops-overview.jpg" alt="" loading="lazy"></a>
+          <div class="cs-text">
+            <div class="cs-meta"><span class="cs-num">03</span>The Pattern House · Product Lead &amp; Builder · <span class="live-dot">Live</span></div>
+            <h3><a href="work/tph-operations-platform.html">Cutting a factory's sales cycle from 45 days to 15.</a></h3>
+            <dl class="cs-pwr">
+              <div><dt>Problem</dt><dd>Leads, quotes, orders and receipts lived in five tools that never agreed. Winning a client took about 45 days.</dd></div>
+              <div><dt>What I did</dt><dd>Redesigned the pipeline, wrote the money rules, and built and shipped one platform from first inquiry to cash in three weeks.</dd></div>
+              <div><dt>Result</dt><dd><b>45 → 15 days</b> to win a client. 125 leads, 23 active clients, <b>₦21M+</b> revenue through the system.</dd></div>
+            </dl>
+            <a class="cs-go" href="work/tph-operations-platform.html">Read the case study →</a>
+          </div>
+        </article>
+
+        <article class="cs-row flip reveal">
+          <a class="cs-visual" href="work/the-pattern-house.html" aria-hidden="true" tabindex="-1"><img src="assets/img/ph-hero.jpg" alt="" loading="lazy"></a>
+          <div class="cs-text">
+            <div class="cs-meta"><span class="cs-num">04</span>The Pattern House · Product Lead · <span class="live-dot">Live</span></div>
+            <h3><a href="work/the-pattern-house.html">A website rebuilt to sell, not just to look good.</a></h3>
+            <dl class="cs-pwr">
+              <div><dt>Problem</dt><dd>Every lead started with rounds of questions, and nobody knew where any lead came from.</dd></div>
+              <div><dt>What I did</dt><dd>Rebuilt the site so each inquiry arrives qualified, tagged with its source and placed in the sales pipeline. Rolled back my own redesign when the data said it wasn't working.</dd></div>
+              <div><dt>Result</dt><dd><b>13 of 17</b> inquiries in one month found the studio through AI assistants.</dd></div>
+            </dl>
+            <a class="cs-go" href="work/the-pattern-house.html">Read the case study →</a>
+          </div>
+        </article>
+
+        <article class="cs-row reveal">
+          <a class="cs-visual" href="work/che-orika.html" aria-hidden="true" tabindex="-1"><img src="assets/img/co-hero.jpg" alt="" loading="lazy"></a>
+          <div class="cs-text">
+            <div class="cs-meta"><span class="cs-num">05</span>Ché Orika · Founder &amp; Product Lead · <span class="live-dot">Live</span></div>
+            <h3><a href="work/che-orika.html">One system for a fashion brand, from shop floor to monthly review.</a></h3>
+            <dl class="cs-pwr">
+              <div><dt>Problem</dt><dd>Stock sold in the boutique was still for sale online, and customers who bought on WhatsApp didn't exist anywhere else.</dd></div>
+              <div><dt>What I did</dt><dd>Designed and built a storefront and admin portal on one backend that owns catalog, stock, orders, payments and reporting.</dd></div>
+              <div><dt>Result</dt><dd><b>5 sales channels</b> (website, boutique, WhatsApp, Instagram, phone) on one stock count.</dd></div>
+            </dl>
+            <a class="cs-go" href="work/che-orika.html">Read the case study →</a>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="also">
+        <div class="also-head">How I build: two internal tools</div>
+        <div class="also-grid">
+          <a class="also-card" href="work/ai-operating-system.html">
+            <b>A multi-agent AI team with real release gates</b>
+            <span>Seven AI functions with clear ownership, hand-offs and human approval before anything reaches production.</span>
+            <em>Read →</em>
+          </a>
+          <a class="also-card" href="work/job-hunt-cockpit.html">
+            <b>An AI assistant that refuses to make things up</b>
+            <span>Finds roles, scores fit and tailors applications against the live posting, and asks before it invents anything.</span>
+            <em>Read →</em>
+          </a>
         </div>
-      </a>
-      <a class="work-card" href="work/tph-operations-platform.html">
-        <div class="wc-img"><img src="assets/img/ops-overview.jpg" alt="TPH Operations Platform overview" loading="lazy"></div>
-        <div class="wc-body">
-          <div class="wc-top"><span class="wc-role">Product Lead</span><span class="badge live">● Live</span></div>
-          <h3>TPH Operations Platform</h3>
-          <p>The factory's operating system, from first inquiry to quote, invoice, production, quality, stock, and the monthly close. Empty repo to production in three weeks.</p>
-          <div class="wc-foot"><span class="wc-cta">Read case study →</span><span class="wc-stack">Next.js · Neon · Prisma</span></div>
-        </div>
-      </a>
-      <a class="work-card" href="work/che-orika.html">
-        <div class="wc-img"><img src="assets/img/co-hero.jpg" alt="Ché Orika storefront" loading="lazy"></div>
-        <div class="wc-body">
-          <div class="wc-top"><span class="wc-role">Founder &amp; Product Lead</span><span class="badge live">● Live</span></div>
-          <h3>Ché Orika</h3>
-          <p>A multi-tenant fashion commerce platform, live and selling across five channels, with one governed backend for catalog, stock, checkout, orders, and the storefront CMS.</p>
-          <div class="wc-foot"><span class="wc-cta">Read case study →</span><span class="wc-stack">Next.js · Neon · Prisma</span></div>
-        </div>
-      </a>
+      </div>
     </div>
   </section>
 
-  <!-- NEXT -->
-  <section id="next" class="next">
-    <div class="sec-label"><span class="sec-num">04</span><h2>What's next</h2></div>
-    <p class="sec-sub" style="max-width:64ch;font-size:clamp(16px,2vw,18px);color:var(--ink-soft)">Over the coming months I plan to expand these case studies with more architecture diagrams, product artefacts, metrics, and the decisions behind each build, as these products continue to evolve.</p>
+  <!-- 3b. WHAT PEOPLE SAID -->
+  <section class="section h-quotes">
+    <div class="wrap">
+      <span class="eyebrow">In their words</span>
+      <h2 class="h-lg" style="margin-top:14px">What the people I work with said</h2>
+      <div class="q-grid">
+        <figure class="q reveal">
+          <blockquote>"For being on top of this 1-1 onboarding flow and making sure we get it delivered to as close to the spec and as soon as possible, despite functional limitations."</blockquote>
+          <figcaption><b>Team shout-out</b><span>Leadership, B2B SaaS platform</span></figcaption>
+        </figure>
+        <figure class="q reveal">
+          <blockquote>"So the rollover rate is significantly higher. Should we expand this out to more users and do it more?"</blockquote>
+          <figcaption><b>Stakeholder review</b><span>After the 1-1 onboarding I ran converted 62.5% of finished trials into paid plans</span></figcaption>
+        </figure>
+        <figure class="q reveal">
+          <blockquote>"Lowest daily churn rate ever yesterday and today so far, despite the proxy outage."</blockquote>
+          <figcaption><b>Churn team update</b><span>From the retention squad I ran as product manager</span></figcaption>
+        </figure>
+      </div>
+    </div>
   </section>
 
-</div>
+  <!-- 4. TRUST: how I work -->
+  <section class="section" id="approach">
+    <div class="wrap">
+      <span class="eyebrow">How I work</span>
+      <h2 class="h-lg" style="margin-top:14px">Why teams trust my work</h2>
+      <div class="steps" style="margin-top:clamp(28px,4vw,44px)">
+        <div class="step reveal"><h3>I talk to the people doing the work</h3><p>Salespeople, operators and customers first. At The Pattern House the "broken form" turned out to be a site that had dropped out of Google.</p></div>
+        <div class="step reveal"><h3>I design the workflow before the screens</h3><p>Stages, ownership, hand-offs and the rules for money and stock come first. Screens follow.</p></div>
+        <div class="step reveal"><h3>I build with AI, with real checks</h3><p>Specs, one person approving merges, QA sign-off and human approval before production.</p></div>
+        <div class="step reveal"><h3>I measure, and undo what doesn't work</h3><p>Every change gets a before and after. I rolled back my own form redesign after four days of zero leads.</p></div>
+      </div>
+    </div>
+  </section>
 
-<footer id="contact">
+  <section class="section" id="experience">
+    <div class="wrap">
+      <span class="eyebrow">Experience</span>
+      <h2 class="h-lg" style="margin:14px 0 clamp(28px,4vw,44px)">Seven years, four industries</h2>
+      <div class="xp">
+        <div class="xp-row"><div class="xp-date">08/2025 – Present</div><div><div class="xp-role">Senior Product Manager <span>· SearchAtlas</span></div><div class="xp-note">Account health, onboarding, monetisation and AI insights.</div></div><span></span></div>
+        <div class="xp-row"><div class="xp-date">11/2024 – 09/2025</div><div><div class="xp-role">Product Manager, Enterprise Sales, Growth &amp; Delivery <span>· Reliance Health</span></div><div class="xp-note">Enterprise sales workflow, onboarding and customer health.</div></div><span></span></div>
+        <div class="xp-row"><div class="xp-date">07/2023 – 02/2025</div><div><div class="xp-role">Product Manager, B2B SaaS (Contract) <span>· Vertex Software Corporation</span></div><div class="xp-note">CRM integration and localised sites for a global software company.</div></div><span></span></div>
+        <div class="xp-row"><div class="xp-date">04/2023 – 10/2024</div><div><div class="xp-role">Founding Product Manager <span>· Spritz</span></div><div class="xp-note">Two-sided marketplace, from idea to MVP.</div></div><span></span></div>
+        <div class="xp-row"><div class="xp-date">02/2021 – 03/2023</div><div><div class="xp-role">Product Manager, Enterprise &amp; Growth <span>· Decagon</span></div><div class="xp-note">Employer platform and sales pipeline automation.</div></div><span></span></div>
+        <div class="xp-row"><div class="xp-date">02/2019 – 01/2021</div><div><div class="xp-role">Associate Product Manager <span>· The Fepreneur</span></div><div class="xp-note">Marketplace for women-led small businesses, from launch.</div></div><span></span></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer" id="contact">
   <div class="wrap">
-    <p class="foot-name">Let's build something.</p>
-    <p class="foot-sub">Open to Senior Product Manager roles and interesting problems.</p>
-    <div class="foot-links">
-      <a href="mailto:orikacherechi@gmail.com">orikacherechi@gmail.com</a>
-      <a href="https://linkedin.com/in/cherechi-orika" target="_blank" rel="noopener">LinkedIn ↗</a>
-      <a href="https://github.com/orika-cherechi" target="_blank" rel="noopener">GitHub ↗</a>
+    <span class="eyebrow">Contact</span>
+    <h2 class="h-lg" style="margin:16px 0 14px">Let's build something people use.</h2>
+    <p>I'm open to product manager roles on remote teams in the US, Canada and Europe.</p>
+    <div class="btns" style="margin-top:28px">
+      <a class="btn primary" href="mailto:cherechiorika@gmail.com">cherechiorika@gmail.com</a>
+      <a class="btn" href="https://www.linkedin.com/in/cherechi-orika/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a class="btn" href="https://github.com/orika-cherechi" target="_blank" rel="noopener">GitHub ↗</a>
     </div>
-    <div class="foot-fine">© 2026 Cherechi Orika · Product Portfolio</div>
+    <div class="foot-fine"><span>© 2026 Cherechi Daniella Orika</span><span>Abuja, Nigeria · Working remotely</span></div>
   </div>
 </footer>
 
-<div id="lightbox"><button class="lb-close" aria-label="Close">✕</button><img alt=""><div class="lb-cap"></div></div>
 <script src="assets/site.js"></script>
 </body>
 </html>

@@ -3,173 +3,190 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The Pattern House — Case Study · Cherechi Orika</title>
-<meta name="description" content="A garment production studio's digital acquisition platform, designed and built as a sales product by Cherechi Orika.">
+<title>The Pattern House · Cherechi Orika</title>
+<meta name="description" content="How Cherechi Orika rebuilt a garment production studio's website as a sales product: qualified, attributed inquiries flowing straight into a pipeline, and a funnel review that overturned her own redesign.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap">
 <link rel="stylesheet" href="../assets/site.css">
 </head>
 <body>
 
-<nav>
+<header class="nav">
   <div class="nav-in">
-    <a class="brand" href="../index.html">Cherechi <b>Orika</b></a>
-    <div class="nav-links">
-      <a class="hide-sm" href="../index.html#approach">Approach</a>
-      <div class="menu">
-        <button aria-haspopup="true">Case Studies ▾</button>
-        <div class="menu-panel">
-          <a href="ai-operating-system.html">AI Operating System<small>Product Lead</small></a>
-          <a href="job-hunt-cockpit.html">AI Job Hunt Cockpit<small>Product Owner</small></a>
-          <a href="the-pattern-house.html">The Pattern House<small>Product Lead &amp; Builder</small></a>
-          <a href="tph-operations-platform.html">TPH Operations Platform<small>Product Lead</small></a>
-          <a href="che-orika.html">Ché Orika<small>Founder &amp; Product Lead</small></a>
-        </div>
-      </div>
-      <a class="hide-sm" href="../index.html#contact">Contact</a>
-      <button class="toggle" id="themeToggle" aria-label="Toggle theme" title="Toggle theme">◐</button>
-    </div>
+    <a class="brand" href="../index.html"><span class="dot"></span>Cherechi Orika</a>
+    <nav class="nav-links">
+      <a href="../index.html#work">Case studies</a>
+      <a class="hide-sm" href="../index.html#approach">How I work</a>
+      <a class="hide-sm" href="../index.html#experience">Experience</a>
+      <a class="cta" href="#contact">Get in touch</a>
+    </nav>
   </div>
-</nav>
+</header>
 
 <main class="wrap">
-  <section class="cs-hero" style="border:none">
-    <a class="back" href="../index.html#work">← All work</a>
-    <div class="cs-role">Product Lead &amp; Builder</div>
-    <h1>The Pattern House</h1>
-    <div class="cs-meta">
-      <span class="badge live">● Live</span>
-      <a class="case-link" href="https://thepatternhouse.co" target="_blank" rel="noopener">thepatternhouse.co ↗</a>
-      <span style="font-family:var(--mono);font-size:11px;color:var(--ink-faint)">B2B lead-generation platform</span>
-    </div>
-    <p class="cs-lead">A garment production studio's digital acquisition platform. I designed and built the live site at thepatternhouse.co as a sales product, not a brochure. Every page exists to move a stranger from "I need a factory I can trust" to a qualified inquiry sitting in a CRM pipeline, with the operational detail a production studio actually needs to quote already captured.</p>
+  <section class="cs-hero">
+    <a class="crumb" href="../index.html#work">← All work</a>
+    <div><span class="eyebrow">The Pattern House · Product Lead &amp; Builder</span></div>
+    <h1>A website rebuilt as a sales product</h1>
+    <p class="lead">Garment production in Nigeria runs on WhatsApp threads, PDF quotes and referrals. I designed and built thepatternhouse.co so every page does one job: move a stranger from "I need a factory I can trust" to a qualified, source-tagged inquiry sitting in the sales pipeline, with the detail the studio needs to quote already captured.</p>
+    <dl class="facts">
+      <div class="fact"><dt>Role</dt><dd>Product Lead &amp; Builder</dd></div>
+      <div class="fact"><dt>Timeline</dt><dd>2025 – Present</dd></div>
+      <div class="fact"><dt>Scope</dt><dd>Site, CRM, analytics, alerts</dd></div>
+      <div class="fact"><dt>Status</dt><dd><a class="chip live" href="https://thepatternhouse.co" target="_blank" rel="noopener" style="text-decoration:none">thepatternhouse.co ↗</a></dd></div>
+    </dl>
   </section>
 
-  <figure class="shot cs-lead-img">
-    <img src="../assets/img/ph-hero.jpg" alt="The Pattern House homepage hero">
-    <figcaption>The homepage, positioned around trust and reliability, the real drivers of a manufacturing decision</figcaption>
+  <div class="results">
+    <div class="result dark"><div class="m-num">13 of 17</div><div class="m-label">Inquiries in one four-week window named AI assistants as how they found the studio</div></div>
+    <div class="result"><div class="m-num">~61%</div><div class="m-label">Of people who started the form finished it, which proved the form was not the leak</div></div>
+    <div class="result"><div class="m-num">2.4×</div><div class="m-label">Lead overcount found and fixed in analytics</div></div>
+    <div class="result"><div class="m-num">125</div><div class="m-label">Leads handled by the wider system this site feeds, with 23 active clients</div></div>
+  </div>
+
+  <figure class="cover">
+    <img src="../assets/img/ph-hero.jpg" data-full="../assets/shots/tph-hero.png" alt="The Pattern House homepage">
+    <figcaption>The homepage, positioned around trust and reliability, the real drivers of a manufacturing decision.</figcaption>
   </figure>
 
-  <div class="cs-body">
+  <div class="cs-layout">
+    <aside class="toc">
+      <div class="toc-t">On this page</div>
+      <a href="#problem">The problem</a>
+      <a href="#approach">The approach</a>
+      <a href="#engine">The inquiry engine</a>
+      <a href="#usecases">Use cases</a>
+      <a href="#drought">The lead drought</a>
+      <a href="#funnel">The funnel review</a>
+      <a href="#after">After launch</a>
+      <a href="#learned">What I learned</a>
+    </aside>
 
-    <div class="cs-section">
-      <div class="cs-2col">
-        <div><div class="cs-h">The Problem</div></div>
-        <div class="cs-prose">
-          <p>Garment production in Nigeria runs on WhatsApp threads, PDF quotes, and referrals, so inquiries arrived unstructured and inconsistently qualified.</p>
-          <p>There was no pipeline, no source visibility, and every lead demanded rounds of manual back-and-forth just to learn the garment type, volume, timeline, and location before anyone could price the job. Real leads were landing with zero attribution, so the business could not even answer "where did this client come from."</p>
+    <article class="article">
+      <section class="block" id="problem">
+        <div class="block-k">The problem</div>
+        <h2>Every lead started with an interrogation, and nobody knew where it came from</h2>
+        <div class="prose">
+          <p>Inquiries arrived unstructured and inconsistently qualified. Before anyone could price a job, there were rounds of back-and-forth just to learn the garment type, volume, timeline and location. There was no pipeline and no source visibility.</p>
+          <p>Real leads were landing with zero attribution, so the business could not answer the simplest growth question: where did this client come from?</p>
         </div>
-      </div>
-    </div>
+        <div class="callout">I treated the website as the top of a sales system, not a standalone site. Its job is to deliver a quote-ready lead to the right person.</div>
+      </section>
 
-    <div class="cs-section">
-      <div class="cs-2col">
-        <div><div class="cs-h">The Approach</div></div>
-        <div class="cs-prose">
-          <p>I treated the website as the top of a sales system rather than a standalone site.</p>
-          <ul class="cs-list">
-            <li>Designed the inquiry form as a qualification instrument that captures the exact operational data a factory needs to triage and quote, so the first human touch is a quote conversation, not a discovery interrogation.</li>
-            <li>Anchored the flow to a real 10-stage B2B production pipeline, from New Inquiry to Delivered and Closed Won, so a form submission maps cleanly onto how a factory actually sells.</li>
-            <li>Stood up a CRM as the system of record, with a warmed sending domain and a lifecycle process behind it rather than an inbox.</li>
-            <li>Instrumented the whole funnel so every inquiry carries its traffic source, campaign, and referrer, closing the attribution gap that made early leads unreadable.</li>
+      <section class="block" id="approach">
+        <div class="block-k">01 · Approach</div>
+        <h2>Qualify at capture, not on the call</h2>
+        <div class="cards">
+          <div class="dcard"><span class="k">Form</span><h4>A qualification instrument</h4><p>The inquiry form captures the exact operational data a factory needs to triage and quote, banded to the studio's real minimums. The first human touch is a quote conversation, not a discovery interview.</p></div>
+          <div class="dcard"><span class="k">Pipeline</span><h4>Mapped to how a factory sells</h4><p>Submissions map onto a real 10-stage B2B production pipeline, from New Inquiry to Delivered and Closed Won.</p></div>
+          <div class="dcard"><span class="k">CRM</span><h4>A system of record, not an inbox</h4><p>HubSpot as the record, with custom qualification properties, a warmed sending domain and a lifecycle process behind it.</p></div>
+          <div class="dcard"><span class="k">Attribution</span><h4>Every lead carries its source</h4><p>Traffic source, campaign and referrer travel with each inquiry, closing the gap that made early leads unreadable.</p></div>
+        </div>
+      </section>
+
+      <section class="block" id="engine">
+        <div class="block-k">02 · The inquiry engine</div>
+        <h2>From form submit to the sales team in seconds</h2>
+        <div class="prose">
+          <p>The "Request a Quote" form asks for what a factory needs to price without a phone call: brand or project name, contact details, country and region, a production description, and an approximate quantity banded to real manufacturing tiers.</p>
+          <p>On submit, a server-side function creates the CRM record, fires an instant branded acknowledgement email and fans the lead out to the sales team in real time. Capturing the CRM cookie, UTM parameters and referrer on the page means leads stop landing as "offline".</p>
+        </div>
+        <div class="flow">
+          <div class="flow-step"><span class="flow-n">01</span><b>Visitor</b><span>Lands from search, AI answers or referral</span></div>
+          <div class="flow-step"><span class="flow-n">02</span><b>Qualifying form</b><span>Quantity, location, production detail</span></div>
+          <div class="flow-step"><span class="flow-n">03</span><b>CRM record</b><span>Source-tagged, in the pipeline</span></div>
+          <div class="flow-step hot"><span class="flow-n">04</span><b>Sales alerted</b><span>Plus an instant acknowledgement email</span></div>
+        </div>
+        <div class="shots one">
+          <figure class="shot"><img src="../assets/img/ph-inquiry.jpg" data-full="../assets/shots/ph-inquiry.png" alt="Request a Quote form" loading="lazy"><figcaption>The qualification form, built to capture production detail up front.</figcaption></figure>
+        </div>
+        <div class="shots">
+          <figure class="shot"><img src="../assets/img/ph-process.jpg" alt="Four-step production journey" loading="lazy"><figcaption>A four-step production journey, brief to sample to finish, with client proof.</figcaption></figure>
+          <figure class="shot"><img src="../assets/img/ph-services.jpg" alt="Service pages" loading="lazy"><figcaption>Service surfaces for private label, capsule collections and bespoke work.</figcaption></figure>
+        </div>
+        <div class="prose">
+          <p>What I built:</p>
+          <ul>
+            <li>A production site on Astro, deployed to Cloudflare Pages through GitHub Actions, so every merge builds and ships.</li>
+            <li>Service pages for the three offerings, a four-step process, portfolio and studio sections.</li>
+            <li>A server-side inquiry workflow as a Cloudflare Pages Function, writing leads straight into the CRM.</li>
+            <li>HubSpot with a 10-stage pipeline and custom qualification properties, connected to Zoho Mail and Zoho Cliq.</li>
+            <li>An automated acknowledgement email via Resend and a real-time alert to the sales channel.</li>
+            <li>GA4 and Google Tag Manager with a full lead-funnel event model and a generate_lead key event, plus Search Console.</li>
+            <li>Structured data, a sitemap, and an AI-search layer that classifies traffic from AI answer tools as its own channel.</li>
           </ul>
         </div>
-      </div>
-    </div>
+      </section>
 
-    <div class="cs-section">
-      <div class="cs-h">The Inquiry Engine</div>
-      <p class="expand-note">↳ <b>Click any image to view it full size.</b></p>
-      <div class="cs-2col" style="margin-bottom:20px">
-        <div class="cs-prose">
-          <p>The "Request a Quote" form is the product's core. It asks for the fields a factory needs to price without a phone call: brand or project name, contact details, country and region, a production description, and an approximate quantity banded to real manufacturing tiers.</p>
-          <p>On submit, a server-side function creates the CRM record, fires an instant branded acknowledgement email, and fans the lead out to the sales team in real time. I closed the attribution hole by capturing the CRM cookie, UTM parameters, and referrer on the page, so leads stop landing as "offline" and every inquiry arrives source-tagged.</p>
+      <section class="block" id="usecases">
+        <div class="block-k">Use cases</div>
+        <h2>Who uses it, and how</h2>
+        <div class="usecases">
+          <div class="uc"><div class="uc-who">Brand founder<small>Looking for a factory</small></div><div><p><b>Situation:</b> has a collection in mind and needs a producer they can trust.</p><p><b>What happens now:</b> sees the services, process and client proof, submits one form with their quantity and timeline, and gets an acknowledgement immediately.</p></div></div>
+          <div class="uc"><div class="uc-who">Sales team<small>Working inbound leads</small></div><div><p><b>Situation:</b> needs to respond fast with a real price.</p><p><b>What happens now:</b> the lead arrives in the pipeline and the team channel with the production detail and source attached, so the first reply can be a quote.</p></div></div>
+          <div class="uc"><div class="uc-who">Owner<small>Deciding where to invest</small></div><div><p><b>Situation:</b> wants to know which channels actually bring clients.</p><p><b>What happens now:</b> every inquiry is source-tagged, AI answer tools show as their own channel, and lead sources sit next to the deals in the operations platform.</p></div></div>
         </div>
-        <figure class="shot"><img src="../assets/img/ph-inquiry.jpg" alt="Request a quote inquiry form" loading="lazy"><figcaption>The qualification form, engineered to capture production detail up front</figcaption></figure>
-      </div>
-      <div class="shot-row">
-        <figure class="shot"><img src="../assets/img/ph-process.jpg" alt="Four-step production process and testimonials" loading="lazy"><figcaption>A four-step production journey, brief to sample to finish, with client proof</figcaption></figure>
-        <figure class="shot"><img src="../assets/img/ph-services.jpg" alt="Service offerings and standards" loading="lazy"><figcaption>Service surfaces for private label, capsule collections, and bespoke work</figcaption></figure>
-      </div>
-    </div>
+      </section>
 
-    <div class="cs-section">
-      <div class="cs-2col">
-        <div><div class="cs-h">What I Built</div></div>
-        <div class="cs-prose">
-          <ul class="cs-list">
-            <li>A production website on Astro, deployed to Cloudflare Pages through a GitHub Actions pipeline, so every merge auto-builds and ships.</li>
-            <li>Service pages for the three offerings plus a four-step process, portfolio, and studio sections.</li>
-            <li>A server-side inquiry workflow, built as a Cloudflare Pages Function, that writes leads straight into the CRM.</li>
-            <li>HubSpot CRM with a 10-stage pipeline and custom lead-qualification properties, connected to Zoho Mail and Zoho Cliq.</li>
-            <li>An automated acknowledgement email on every submission via Resend, plus an internal notification fan-out to the sales channel the moment a lead lands.</li>
-            <li>GA4 and Google Tag Manager with a full lead-funnel event model and a generate_lead key event, plus Google Search Console.</li>
-            <li>Structured data, a sitemap, and an AI-search-visibility layer that classifies traffic from AI answer tools as its own channel, so the studio stays legible to both search engines and AI discovery.</li>
-          </ul>
+      <section class="block" id="drought">
+        <div class="block-k">03 · Diagnosis</div>
+        <h2>The month the leads stopped</h2>
+        <div class="prose">
+          <p>Inquiries stopped for a month. The instinct was "the form is broken". The evidence said otherwise: a rebuild had dropped the site out of Google's index.</p>
+          <p>On the way I found two silent failures. WhatsApp lead alerts were accepted by the provider but never delivered, and a trailing space in a hand-typed setting had broken the team chat alerts. I fixed both, ran an environment-hygiene sweep, and added a "How did you hear about us?" question, kept separate from automatic attribution, with AI assistants as an explicit option.</p>
+          <p>AI answer tools became the top self-reported source, named by <strong>13 of 17 inquiries</strong> in one four-week window.</p>
         </div>
-      </div>
-    </div>
+      </section>
 
-    <div class="cs-section">
-      <div class="cs-2col">
-        <div><div class="cs-h">Product Decisions</div></div>
-        <div class="cs-prose">
-          <ul class="cs-list">
-            <li><b>Website as a sales product.</b> I scoped the site around one job, converting a qualified inquiry, and built the analytics, CRM, and notification plumbing to match, rather than shipping a static page and hoping.</li>
-            <li><b>Qualify at capture, not on the call.</b> The form asks for quantity, location, and production detail up front, banded to the studio's real minimums, so the manual back-and-forth that used to precede every quote is largely eliminated before a human is involved.</li>
-            <li><b>Recover discoverability, then defend it.</b> After a visibility gap surfaced, I layered SEO structured data, Search Console, and an AI-answer channel model so the studio is findable in both classic search and AI-assisted discovery, not just by referral.</li>
-          </ul>
+      <section class="block" id="funnel">
+        <div class="block-k">04 · Measurement</div>
+        <h2>A funnel review that overturned my own redesign</h2>
+        <div class="prose">
+          <p>When submissions dipped I brought design, data and engineering together on the numbers. The leak was reach, not the form: only about a third of homepage visitors ever reached it, while about <strong>61%</strong> of people who started it finished.</p>
+          <p>Analytics was also overcounting leads by <strong>2.4 times</strong>, because other forms fired the same event. And a redesigned form I had shipped produced zero leads in four days, so I rolled it back.</p>
         </div>
-      </div>
-    </div>
+        <div class="callout">The rule now: any form or call-to-action change gets a 72-hour before-and-after scorecard.</div>
+      </section>
 
-    <div class="cs-section">
-      <div class="cs-2col">
-        <div><div class="cs-h">After Launch</div></div>
-        <div class="cs-prose">
-          <p>Launch was the start of the product, not the end. Four pieces of post-launch work changed how the site performs and how I run it.</p>
-          <ul class="cs-list">
-            <li><b>Diagnosing a lead drought.</b> Inquiries stopped for a month. The instinct was "the form is broken"; the evidence said otherwise. I traced it to a rebuild that had dropped the site out of Google's index, then found two silent failures on the way: WhatsApp lead alerts that the provider accepted but never delivered, and a trailing space in a hand-typed setting that broke the team chat alerts. I fixed both, ran an environment-hygiene sweep, and added a "How did you hear about us?" question, kept separate from automatic attribution, with AI assistants as an explicit option. AI answer tools became the top self-reported source, named by 13 of 17 inquiries in one four-week window.</li>
-            <li><b>A funnel review that overturned a redesign.</b> When submissions dipped I convened design, data, and engineering on the numbers. The leak was reach, not the form: only about a third of homepage visitors ever reached it, while about 61 percent of people who started it finished. Analytics was overcounting leads by 2.4 times because other forms fired the same event. A redesigned form I had shipped produced zero leads in four days, so I rolled it back. The rule now is that any form or call-to-action change gets a 72-hour before-and-after scorecard.</li>
-            <li><b>A careers system on the same engine.</b> A data-driven careers section where adding a role is one entry in a data file: listing, detail page, job-posting structured data, CV upload with validation, and an automatic acknowledgement. Applicants stay out of the sales CRM, and each role can carry its own questions and employer template, so a Ché Orika Group role runs on the same code.</li>
-            <li><b>Safer previews and first-party data.</b> Preview deployments run in a sandbox that cannot touch the live CRM or alert channels, and the site now beacons its own funnel events into the studio's <a href="tph-operations-platform.html">operations platform</a>, where inquiries land as leads.</li>
-          </ul>
+      <section class="block" id="after">
+        <div class="block-k">05 · After launch</div>
+        <h2>The same engine, extended</h2>
+        <div class="cards">
+          <div class="dcard"><span class="k">Careers</span><h4>Hiring on the same code</h4><p>Adding a role is one entry in a data file: listing, detail page, job-posting structured data, CV upload with validation and an automatic acknowledgement. Applicants stay out of the sales CRM, and a Ché Orika Group role runs on the same code.</p></div>
+          <div class="dcard"><span class="k">Safety</span><h4>Previews that cannot touch production</h4><p>Preview deployments run in a sandbox that cannot reach the live CRM or alert channels.</p></div>
+          <div class="dcard"><span class="k">Data</span><h4>First-party events into operations</h4><p>The site beacons its funnel events into the studio's <a href="tph-operations-platform.html">operations platform</a>, where inquiries land as leads, then quotes, then orders, without being retyped.</p></div>
+          <div class="dcard"><span class="k">Results</span><h4>Part of a faster sales cycle</h4><p>Together with the operations platform, the system has supported 125 leads, 23 active clients and ₦21M+ in revenue, and cut the lead-to-client cycle from 45 days to 15.</p></div>
         </div>
-      </div>
-    </div>
+      </section>
 
-    <div class="cs-section">
-      <div class="cs-2col">
-        <div><div class="cs-h">Technology</div></div>
-        <div class="cs-prose">
-          <div class="chips"><span class="c">Astro</span><span class="c">Cloudflare Pages</span><span class="c">Cloudflare Functions</span><span class="c">GitHub Actions</span><span class="c">HubSpot</span><span class="c">Zoho Mail &amp; Cliq</span><span class="c">Resend</span><span class="c">GA4</span><span class="c">GTM</span><span class="c">Claude Code</span><span class="c">Cursor</span></div>
+      <section class="block" id="learned">
+        <div class="block-k">What I learned</div>
+        <h2>Launch is the start of the product, not the end</h2>
+        <div class="prose">
+          <p>The biggest wins came after launch, from reading the evidence instead of the instinct. A broken-looking form was an indexing problem. A dip was a reach problem. A redesign I believed in produced nothing, and the data made rolling it back easy. I now measure every change before I trust it.</p>
         </div>
-      </div>
-    </div>
-
-    <div class="cs-section">
-      <div class="cs-callout">
-        <div class="cs-h">Outcome</div>
-        <p>The platform turned inbound manufacturing interest into a structured, attributed pipeline. Real inquiries came through the form and converted into paying B2B production clients within weeks of launch. The CRM replaced scattered WhatsApp and PDF tracking with a single system of record, and once attribution was wired in, every new lead became traceable to its source. Today the site feeds the studio's own operations platform directly, so an inquiry becomes a lead, a quote, and an order without being retyped.</p>
-      </div>
-    </div>
-
+        <div class="stack"><span class="chip">Astro</span><span class="chip">Cloudflare Pages</span><span class="chip">Cloudflare Functions</span><span class="chip">GitHub Actions</span><span class="chip">HubSpot</span><span class="chip">Zoho Mail &amp; Cliq</span><span class="chip">Resend</span><span class="chip">GA4</span><span class="chip">Google Tag Manager</span><span class="chip">Claude Code</span><span class="chip">Cursor</span></div>
+      </section>
+    </article>
   </div>
 
-  <div class="cs-nav">
-    <a href="job-hunt-cockpit.html"><small>Previous</small>← AI Job Hunt Cockpit</a>
-    <a class="nx" href="tph-operations-platform.html"><small>Next</small>TPH Operations Platform →</a>
-  </div>
+  <nav class="next-prev">
+    <a class="np" href="tph-operations-platform.html"><small>← Previous</small><b>TPH Operations Platform</b></a>
+    <a class="np r" href="che-orika.html"><small>Next →</small><b>Ché Orika</b></a>
+  </nav>
 </main>
 
-<footer id="contact">
+<footer class="footer" id="contact">
   <div class="wrap">
-    <p class="foot-name">Let's build something.</p>
-    <p class="foot-sub">Open to Senior Product Manager roles and interesting problems.</p>
-    <div class="foot-links">
-      <a href="mailto:orikacherechi@gmail.com">orikacherechi@gmail.com</a>
-      <a href="https://linkedin.com/in/cherechi-orika" target="_blank" rel="noopener">LinkedIn ↗</a>
-      <a href="https://github.com/orika-cherechi" target="_blank" rel="noopener">GitHub ↗</a>
+    <span class="eyebrow">Contact</span>
+    <h2 class="h-lg" style="margin:16px 0 14px">Let's build something people use.</h2>
+    <p>I'm open to product manager roles on remote teams in the US, Canada and Europe.</p>
+    <div class="btns" style="margin-top:28px">
+      <a class="btn primary" href="mailto:cherechiorika@gmail.com">cherechiorika@gmail.com</a>
+      <a class="btn" href="https://www.linkedin.com/in/cherechi-orika/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a class="btn" href="https://github.com/orika-cherechi" target="_blank" rel="noopener">GitHub ↗</a>
     </div>
-    <div class="foot-fine">© 2026 Cherechi Orika · Product Portfolio</div>
+    <div class="foot-fine"><span>© 2026 Cherechi Daniella Orika</span><span>Abuja, Nigeria · Working remotely</span></div>
   </div>
 </footer>
 
