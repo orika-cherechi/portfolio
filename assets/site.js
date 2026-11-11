@@ -1,5 +1,21 @@
 (function(){
   var root=document.documentElement;
+  // resume mode: only on the /resume/ link (or ?resume), remembered for the tab
+  var cv=false;
+  try{ if(/[?&]resume\b/.test(location.search)) sessionStorage.setItem('cvMode','1'); cv=sessionStorage.getItem('cvMode')==='1'; }catch(e){ cv=/[?&]resume\b/.test(location.search); }
+  if(cv){
+    var me=document.querySelector('script[src$="site.js"]');
+    var pdf=me.getAttribute('src').replace('site.js','Cherechi_Daniella_Orika_Resume.pdf');
+    function rl(cls,txt){var a=document.createElement('a');a.className=cls;a.href=pdf;a.target='_blank';a.rel='noopener';a.setAttribute('download','');a.textContent=txt;return a;}
+    var nav=document.querySelector('.nav-links .cta');
+    if(nav) nav.parentNode.insertBefore(rl('','Resume'),nav);
+    document.querySelectorAll('.btns').forEach(function(b){
+      var first=b.querySelector('.btn.primary');
+      var a=rl('btn','Download resume');
+      if(first&&first.nextSibling) b.insertBefore(a,first.nextSibling); else b.appendChild(a);
+    });
+  }
+
   // scroll reveal
   if('IntersectionObserver' in window){
     var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.05});
